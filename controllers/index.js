@@ -7,3 +7,5 @@ router.use('/', homeRoute);
 router.use('/api', apiRoutes);
 
 module.exports = router;
+
+//commenting to add index.js back
