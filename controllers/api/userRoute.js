@@ -1,26 +1,28 @@
-const express = require('express');
+const router = require('express');
+const User = require('../../models/User');
 const userRoute = express.Router();
-const { pool } = require('../app'); // Import the pool from app.js
+const bcrypt = require('bcrypt');
+// const { pool } = require('../app'); // Import the pool from app.js
 
- 
 
-// handling HTTP GET requests to the /signup endpoint
+// Get all user
 userRoute.get('/signup', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM users');
-    res.json(result.rows);
+    const userData = await User.findAll();
+    res.status(200).json(userData);
   } catch (error) {
     console.error(error);
     res.status(500).send('Error fetching users');
   }
 });
 
-//handling HTTP POST requests to the /signup endpoint
+
+// Create a new user
 userRoute.post('/signup', async (req, res) => {
   try {
     const { userName, email, password } = req.body;
-    const result = await pool.query('INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *', [userName,  email, password]);
-    res.json(result.rows[0]);
+    const userData = await User.create({ userName, email, password });
+    res.status(200).json(userData);
   } catch (error) {
     console.error(error);
     res.status(500).send('Error creating user');
@@ -31,12 +33,18 @@ userRoute.post('/signup', async (req, res) => {
 userRoute.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
-    const result = await pool.query('SELECT * FROM users WHERE email = $1 AND password = $2', [email, password]);
-    if (result.rows.length > 0) {
-      // User exists and password matches
-      res.json({ message: 'Login successful', user: result.rows[0] });
+    const user = await User.findOne({ where: { email } });
+    if (user) {
+      const passwordMatch = await bcrypt.compare(password, user.password);
+      if (passwordMatch) {
+        // Passwords match, login successful
+        res.json({ message: 'Login successful', user });
+      } else {
+        // Passwords don't match
+        res.status(401).json({ message: 'Invalid email or password' });
+      }
     } else {
-      // User not found or password incorrect
+      // User not found
       res.status(401).json({ message: 'Invalid email or password' });
     }
   } catch (error) {
@@ -61,6 +69,22 @@ userRoute.post('/logout', async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const userData = await User.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!userData) {
+      res.status(404).json({ message: 'No user with this id!' });
+      return;
+    }
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 module.exports = userRoute;
