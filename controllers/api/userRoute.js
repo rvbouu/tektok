@@ -18,8 +18,8 @@ userRoute.get('/signup', async (req, res) => {
 //handling HTTP POST requests to the /signup endpoint
 userRoute.post('/signup', async (req, res) => {
   try {
-    const { name, email } = req.body;
-    const result = await pool.query('INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *', [name, email]);
+    const { userName, email, password } = req.body;
+    const result = await pool.query('INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *', [userName,  email, password]);
     res.json(result.rows[0]);
   } catch (error) {
     console.error(error);
@@ -44,5 +44,23 @@ userRoute.post('/login', async (req, res) => {
     res.status(500).send('Error logging in');
   }
 });
+
+// handling user logout requests // using sessions
+userRoute.post('/logout', async (req, res) => {
+  try {
+       req.session.destroy(err => {
+      if (err) {
+        console.error('Error destroying session:', err);
+        return res.status(500).send('Error logging out');
+      }
+      res.json({ message: 'Logout successful' });
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error logging out');
+  }
+});
+
+
 
 module.exports = userRoute;
