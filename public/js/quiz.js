@@ -9,7 +9,7 @@ const quizQs = [
     answer3: "Yellow",
     ans3Total: 3,
     answer4: "Blue",
-    ans4Total: 4,
+    ans4Total: 5,
   },
   {
     question: "What do you like to do in your free time?",
@@ -36,7 +36,13 @@ const quizQs = [
   {
     question: "Ready for your results?",
     answer1: "Let's gooo!",
-    ans1Total: 1
+    ans1Total: 1,
+    answer2: "Ready as I'll ever be",
+    ans2Total: 1,
+    answer3: "I guess.",
+    ans3Total: 1,
+    answer4: "Ready!",
+    ans4Total: 1
   }
 ]
 
@@ -45,23 +51,34 @@ let score = [];
 let selectedAns = [];
 const totalQs = quizQs.length;
 
+const container = document.querySelector('.quiz-container');
+const questionEl = document.querySelector('.question');
+const opt1 = document.querySelector('.opt1');
+const opt2 = document.querySelector('.opt2');
+const opt3 = document.querySelector('.opt3');
+const opt4 = document.querySelector('.opt4');
+const nextButton = document.querySelector('.next');
+const previousButton = document.querySelector('.previous');
+const restartButton = document.querySelector('.restart');
+const result = document.querySelector('.result');
+
 function generateQs(i) {
-  const question = quizQs[i];
+  const q = quizQs[i];
   const opt1Total = quizQs[i].ans1Total;
   const opt2Total = quizQs[i].ans2Total;
   const opt3Total = quizQs[i].ans3Total;
   const opt4Total = quizQs[i].ans4Total;
 
-  questionEl.innerHTML = `${i + 1}. ${quizQs.question}`;
+  questionEl.innerHTML = `${i + 1}. ${q.question}`;
   opt1.setAttribute('data-total', `${opt1Total}`);
   opt2.setAttribute('data-total', `${opt2Total}`);
   opt3.setAttribute('data-total', `${opt3Total}`);
   opt4.setAttribute('data-total', `${opt4Total}`);
 
-  opt1.innerHTML = `${quizQs.answer1}`;
-  opt2.innerHTML = `${quizQs.answer2}`;
-  opt3.innerHTML = `${quizQs.answer3}`;
-  opt4.innerHTML = `${quizQs.answer4}`;
+  opt1.innerHTML = `${q.answer1}`;
+  opt2.innerHTML = `${q.answer2}`;
+  opt3.innerHTML = `${q.answer3}`;
+  opt4.innerHTML = `${q.answer4}`;
 }
 
 function loadNextQ() {
@@ -77,26 +94,26 @@ function loadNextQ() {
   ////Add the answer score to the score array
   score.push(answerScore);
 
-  selectedAnswersData.push()
+  selectedAns.push()
 
 
   const totalScore = score.reduce((total, currentNum) => total + currentNum);
 
-  currentQuestion++;
+  currentQ++;
 
   selectedOption.checked = false;
 
-  if (currentQuestion == totalQuestions - 1) {
+  if (currentQ == totalQs - 1) {
     nextButton.textContent = 'Finish';
   }
 
-  if (currentQuestion == totalQuestions) {
+  if (currentQ == totalQs) {
     container.style.display = 'none';
-    if (totalScore >= 5){
+    if (totalScore <= 5){
       result.innerHTML =
       `<h2 class="final-score">Your are Handlebars.js!</h2>
       <button class="restart">Restart Quiz</button>`
-    } else if(totalScore >= 9){
+    } else if(totalScore <= 9){
       result.innerHTML =
       `<h2 class="final-score">Your are HTML!</h2>
       <button class="restart">Restart Quiz</button>`
@@ -104,37 +121,37 @@ function loadNextQ() {
       result.innerHTML =
       `<h2 class="final-score">Your are JavaScript!</h2>
       <button class="restart">Restart Quiz</button>`
-    } else if(totalScore <= 11 ){
+    } else if(totalScore >= 11 ){
       result.innerHTML =
       `<h2 class="final-score">Your are CSS!</h2>
       <button class="restart">Restart Quiz</button>`
     }
     return;
   }
-  generateQuestions(currentQuestion);
+  generateQs(currentQ);
 }
 
-function loadPreviousQuestion() {
+function loadPreviousQ() {
 
-  currentQuestion--;
+  currentQ--;
 
   score.pop();
 
-  generateQuestions(currentQuestion);
+  generateQs(currentQ);
 }
 
 
 function restartQuiz(e) {
   if(e.target.matches('button')) {
 
-  currentQuestion = 0;
+  currentQ = 0;
   score = [];
 
   location.reload();
   }
 }
 
-generateQuestions(currentQuestion);
-nextButton.addEventListener('click', loadNextQuestion);
-previousButton.addEventListener('click',loadPreviousQuestion);
-result.addEventListener('click',restartQuiz);
+generateQs(currentQ);
+nextButton.addEventListener('click', loadNextQ);
+previousButton.addEventListener('click', loadPreviousQ);
+result.addEventListener('click', restartQuiz);
