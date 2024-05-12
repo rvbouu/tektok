@@ -4,28 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>TekTok</title>
+  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
+        {{!-- Insert logo into the span --}}
         <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
+        <a href="/">TekTok</a>
       </h1>
       <nav>
-         <a href="/profile">profile</a> 
-       <!-- Conditionally render login or logout links -->
+        <!-- Conditionally render login or logout links -->
+
+
+        <a href="/profile">profile</a> |
         {{#if logged_in}}
         <button class="no-button" id="logout">logout</button>
-       <!-- else --> 
         {{else}}
+        <!-- else -->
         <a href="/login">login</a>
+        {{/if}}
         <!-- end if -->
-         {{/if}}
       </nav>
     </header>
     <main class="container container-fluid mt-5">
@@ -33,11 +36,11 @@
       {{{ body }}}
     </main>
     <footer>
-      
     </footer>
   </div>
 
   <!-- if-statement: Render script for logged in users only -->
+
 {{#if logged_in}}
   <script src="/js/logout.js"></script>
    <!-- end if -->

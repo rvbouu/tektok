@@ -1,0 +1,34 @@
+[
+  {
+    "firstname": "Vanessa",
+    "lastname": "Bou",
+    "email": "rvbouu@gmail.com",
+    "username": "rvbou",
+    "password": "abcd1234",
+    "profile_pic": "https://avatars.githubusercontent.com/u/158100739?v=4"
+  },
+  {
+    "firstname": "Maggie",
+    "lastname": "McDowell",
+    "email": "maggiemcdowell4@gmail.com",
+    "username": "magtron3030",
+    "password": "abcd1234",
+    "profile_pic": "https://avatars.githubusercontent.com/u/162045153?v=4"
+  },
+  {
+    "firstname": "Joel",
+    "lastname": "Hansen",
+    "email": "joelhansen22@gmail.com",
+    "username": "joelhansenmn",
+    "password": "abcd1234",
+    "profile_pic": "https://avatars.githubusercontent.com/u/161772718?v=4"
+  },
+  {
+    "firstname": "Reynolds",
+    "lastname": "Addy",
+    "email": "reynoldsfrimpong@gmail.com",
+    "username": "reynoldscode",
+    "password": "abcd1234",
+    "profile_pic": "https://avatars.githubusercontent.com/u/41800514?v=4"
+  }
+]
