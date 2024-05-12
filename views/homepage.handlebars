@@ -1,18 +1,15 @@
 <aside class="jokes col-3">
   <h3>Coding Joke of the Day</h3>
-  <p>Where coding jokes will get populated (Helper)</p>
-  <nav>
-    <p>Nav</p>
-    <p>Nav</p>
-    <p>Nav</p>
-  </nav>
+  <p>{{{get_joke}}}</p>
 </aside>
 
 <section class="post-area col-6">
+    {{#each posts as |post|}}
   <div class="post m-3">
-    <h3 class="user-info"><span>profile pic</span>Username</h3>
-    <p>post info blah blah blah</p>
+    <h3 class="user-info"><span>{{user.profile_pic}}</span>{{user.username}}</h3>
+    <p>{{content}}</p>
   </div>
+  {{/each}}
   <div class="post m-3">
     <h3 class="user-info"><span>profile pic</span>Username</h3>
     <p>post info blah blah blah</p>

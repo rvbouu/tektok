@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/jass.css">
   <title>Tek Tok</title>
 </head>
@@ -13,28 +13,28 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="header display-flex justify-space-between">
-      <div class="row">
-        <img src="./assets/tektok.png" alt="logo" class="logo px-5">
-        <nav>
-          <ul class="ul">
-            <li>
-              <a href="#Home">Home</a>
-            </li>
-            <li>
-              <a href="#Profile">Profile</a>
-            </li>
-            <li>
-              <a href="#Resources">Resources</a>
-            </li>
-            <li>
-              <a href="#Games">Games</a>
-            </li>
-          </ul>
-        </nav>
+    <header class="display-flex justify-space-between align-center p-2">
+      <img src="./assets/tektok.png" alt="logo" class="logo px-5">
+      <nav>
+            <a href="/" class="a">Home</a>
+            <a href="/resources" class="a">Resources</a>
+            <a href="/games" class="a">Games</a>
+            <a href="/profile" class="a">Profile | </a>
+
+            {{#if logged_in}}
+            <button class="no-button" id="logout">Logout</button>
+            {{else}}
+            <!-- else -->
+            <a href="/login" class="a">Login</a>
+            {{/if}}
+            <!-- end if -->
+            {{!--
+          </li>
+        </ul> --}}
+      </nav>
     </header>
 
-    <main class="container container-fluid mt-5">
+    <main class="container container-fluid mt-5 row">
       {{{body}}}
     </main>
 
@@ -49,56 +49,26 @@
             <h3 class="col-3">Tek Tok</h3>
             <aside class="col-3">
               <h4>Learn</h4>
-              <ul>
-                <li>
-                  <a href="#CSS">CSS</a>
-                </li>
-                <li>
-                  <a href="#HTML">HTML</a>
-                </li>
-                <li>
-                  <a href="#JavaScript">Javascript</a>
-                </li>
-                <li>
-                  <a href="#React">React</a>
-                </li>
-              </ul>
+              <a href="#CSS" class="a">CSS</a>
+              <a href="#HTML" class="a">HTML</a>
+              <a href="#JavaScript" class="a">Javascript</a>
+              <a href="#React" class="a">React</a>
             </aside>
 
             <aside class="col-3">
               <h4>About Tek Tok</h4>
-              <ul>
-                <li>
-                  <a href="#Team">Team</a>
-                </li>
-                <li>
-                  <a href="#Back Story">Back Story</a>
-                </li>
-                <li>
-                  <a href="#Hiring">Hiring</a>
-                </li>
-                <li>
-                  <a href="#Engagemnt">Engagemnt</a>
-                </li>
-              </ul>
+              <a href="#Team" class="a">Team</a>
+              <a href="#Back Story" class="a">Back Story</a>
+              <a href="#Hiring" class="a">Hiring</a>
+              <a href="#Engagemnt" class="a">Engagemnt</a>
             </aside>
 
             <aside class="col-3">
               <h4>Partner With Us</h4>
-              <ul>
-                <li>
-                  <a href="#Partners">Partners</a>
-                </li>
-                <li>
-                  <a href="#Branding Guidelines">Branding Guidelines</a>
-                </li>
-                <li>
-                  <a href="#Explore Internships">Explore Interships</a>
-                </li>
-                <li>
-                  <a href="#Testimonials">Testimonials</a>
-                </li>
-              </ul>
+              <a href="#Partners" class="a">Partners</a>
+              <a href="#Branding Guidelines" class="a">Branding Guidelines</a>
+              <a href="#Explore Internships" class="a">Explore Interships</a>
+              <a href="#Testimonials" class="a">Testimonials</a>
             </aside>
 
           </nav>
