@@ -32,6 +32,10 @@ nav {
    color: antiquewhite;
 }
 
+main{
+   width: 100vw;
+ }
+
 .footer {
    position: fixed;
    bottom: 0;
