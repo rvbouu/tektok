@@ -7,7 +7,9 @@ router.get('/:id', async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
       include: {
-        model: Following
+        model: User,
+        through: Following,
+        as: "followers"
       }
     });
     if (!userData) {

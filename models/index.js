@@ -11,13 +11,17 @@ Post.belongsTo(User, {
   foreignKey: 'user_id'
 })
 
-User.hasMany(Following, {
-  foreignKey: 'followed_users',
-  onDelete: 'CASCADE'
+User.belongsToMany(User, {
+  foreignKey: 'follower',
+  onDelete: 'SET NULL',
+  through: Following,
+  as: 'followers'
 })
-
-Following.belongsTo(User, {
-  foreignKey: 'followed_users'
+User.belongsToMany(User, {
+  foreignKey: 'followee',
+  onDelete: 'SET NULL',
+  through: Following,
+  as: 'followees'
 })
 
 module.exports = { User, Post, Following }
