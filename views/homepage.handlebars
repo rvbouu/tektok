@@ -1,39 +1,22 @@
-<aside class="jokes col-3">
+<aside class="jokes col-3 m-1">
   <h3>Coding Joke of the Day</h3>
   <p>{{{get_joke}}}</p>
 </aside>
 
 <section class="post-area col-6">
-    {{#each posts as |post|}}
+  {{#each posts as |post|}}
   <div class="post m-3">
-    <h3 class="user-info"><span>{{user.profile_pic}}</span>{{user.username}}</h3>
+    <h4 class="user user-info"><img src="{{user.profile_pic}}" alt="profile pic" class="profile-pic">{{user.username}}
+    </h4>
     <p>{{content}}</p>
   </div>
   {{/each}}
-  <div class="post m-3">
-    <h3 class="user-info"><span>profile pic</span>Username</h3>
-    <p>post info blah blah blah</p>
-  </div>
-  <div class="post m-3">
-    <h3 class="user-info"><span>profile pic</span>Username</h3>
-    <p>post info blah blah blah</p>
-  </div>
 </section>
-<aside class="suggested col-3">
-  <div class="user m-3">
-    <span>Profile pic</span>
-    <h4>Username</h4>
+<aside class="suggested col-2">
+  <h3>Suggested Users</h3>
+  {{#each users as |user|}}
+  <div class="m-3">
+    <h5 class="user"><img src="{{profile_pic}}" alt="profile pic" class="profile-pic">{{username}}</h5>
   </div>
-  <div class="user m-3">
-    <span>Profile pic</span>
-    <h4>Username</h4>
-  </div>
-  <div class="user m-3">
-    <span>Profile pic</span>
-    <h4>Username</h4>
-  </div>
-  <div class="user m-3">
-    <span>Profile pic</span>
-    <h4>Username</h4>
-  </div>
+  {{/each}}
 </aside>
