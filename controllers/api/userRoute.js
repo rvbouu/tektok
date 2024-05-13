@@ -1,71 +1,98 @@
-const router = require('express');
-const User = require('../../models/User');
-const userRoute = express.Router();
-const bcrypt = require('bcrypt');
+const router = require('express').Router();
+const {User, Following} = require('../../models');
+
 // const { pool } = require('../app'); // Import the pool from app.js
-
-
-// Get all user
-userRoute.get('/signup', async (req, res) => {
+// USING FOR TESTING IN POSTMAN vb - WILL DELETE LATER
+router.get('/:id', async (req, res) => {
   try {
-    const userData = await User.findAll();
-    res.status(200).json(userData);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Error fetching users');
+    const userData = await User.findByPk(req.params.id, {
+      include: {
+        model: Following
+      }
+    });
+    if (!userData) {
+      res.status(404).json({ status: `error`, message: `No category found with that id.` });
+      return;
+    }
+    res.status(200).json({ status: `success`, result: userData });
+  }
+  catch (err) {
+    console.log(err)
+    res.status(500).json({ status: `error`, message: err });
   }
 });
 
+// Get all user
+// router.get('/signup', async (req, res) => {
+//   try {
+//     const userData = await User.findAll();
+//     res.status(200).json(userData);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send('Error fetching users');
+//   }
+// });
+
 
 // Create a new user
-userRoute.post('/signup', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
-    const { userName, email, password } = req.body;
-    const userData = await User.create({ userName, email, password });
-    res.status(200).json(userData);
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      req.status(200).json(userData);
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).send('Error creating user');
+    res.status(500).json({status: 'Error creating user', msg: error});
   }
 });
 
 // handling user login requests
-userRoute.post('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
-    const { email, password } = req.body;
-    const user = await User.findOne({ where: { email } });
-    if (user) {
-      const passwordMatch = await bcrypt.compare(password, user.password);
-      if (passwordMatch) {
-        // Passwords match, login successful
-        res.json({ message: 'Login successful', user });
-      } else {
-        // Passwords don't match
-        res.status(401).json({ message: 'Invalid email or password' });
+    const userData = await User.findOne({ where: { username: req.body.username } });
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+        return;
       }
-    } else {
-      // User not found
-      res.status(401).json({ message: 'Invalid email or password' });
-    }
+        // Passwords don't match
+        const validPassword = await userData.checkPassword(req.body.password);
+
+        if (!validPassword) {
+          res
+            .status(400)
+            .json({ message: 'Incorrect email or password, please try again' });
+          return;
+        }
+        req.session.save(() => {
+          console.log('req params', userData.id)
+          console.log('req body', req.body)
+          req.session.user_id = userData.id;
+          req.session.logged_in = true;
+          res.json({ user: userData, message: 'You are now logged in!' });
+          console.log(req.session)
+        });
+    
   } catch (error) {
     console.error(error);
-    res.status(500).send('Error logging in');
+    res.status(500).json({status: 'Error logging in', msg: err});
   }
 });
 
 // handling user logout requests // using sessions
-userRoute.post('/logout', async (req, res) => {
-  try {
-       req.session.destroy(err => {
-      if (err) {
-        console.error('Error destroying session:', err);
-        return res.status(500).send('Error logging out');
-      }
-      res.json({ message: 'Logout successful' });
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
     });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Error logging out');
+  } else {
+    res.status(404).end();
   }
 });
 
@@ -87,4 +114,4 @@ router.delete('/:id', async (req, res) => {
 });
 
 
-module.exports = userRoute;
+module.exports = router;

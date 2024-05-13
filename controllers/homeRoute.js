@@ -90,6 +90,17 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// router.get('/profile', async(req, res) => {
+//   res.render('profile',{
+//     logged_in: req.session.logged_in
+//   })
+// })
+
+router.get('/comingsoon', async (req, res) => {
+  res.render('comingsoon', {
+    logged_in: req.session.logged_in
+  })
+})
 //render homepage
 //
 
