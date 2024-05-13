@@ -1,11 +1,12 @@
 const router = require('express').Router();
-// const homeRoute = require('./homeRoute');
+const followRoute = require('./following-route');
 //const gameRoute = require('./gameRoute');
-// const userRoute = require('./userRoute');
+const userRoute = require('./userRoute');
 // const resourceRoute = require('./resourceRoute')
 
 //router.use('/games', gameRoute);
-// router.use('/users', userRoute);
+router.use('/following', followRoute);
+router.use('/users', userRoute);
 // router.use('/resources', resourceRoute);
 
 module.exports = router;

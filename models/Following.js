@@ -11,13 +11,27 @@ Following.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    user_id: {
+    followed_users: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id',
-      },
+        key: 'id'
+      }
     },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'user',
+    //     key: 'id',
+    //   },
+    // }
+    // post_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'post',
+    //     key: 'id'
+    //   }
+    // }
   },
   {
     sequelize,

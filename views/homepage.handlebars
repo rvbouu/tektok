@@ -6,8 +6,10 @@
 <section class="post-area col-6">
   {{#each posts as |post|}}
   <div class="post m-3">
+    <a href="/profile/{{user.id}}" class="user-link">
     <h4 class="user user-info"><img src="{{user.profile_pic}}" alt="profile pic" class="profile-pic">{{user.username}}
     </h4>
+    </a>
     <p>{{content}}</p>
   </div>
   {{/each}}
@@ -15,8 +17,12 @@
 <aside class="suggested col-2">
   <h3>Suggested Users</h3>
   {{#each users as |user|}}
-  <div class="m-3">
+  <div class="row m-3">
+    <a href="/profile/{{id}}" class="user-link">
     <h5 class="user"><img src="{{profile_pic}}" alt="profile pic" class="profile-pic">{{username}}</h5>
+    </a>
+    <button type="button" class="follow" id="{{id}}">Follow</button>
   </div>
-  {{/each}}
+  {{/each}}  
 </aside>
+<script src="/js/follow.js"></script>
