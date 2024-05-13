@@ -1,20 +1,21 @@
-* {
+*{
+   box-sizing: border-box;
    margin: 0;
-   padding: 0;
-
-}
-
+   margin-top: 0;
+ }
+ 
 body {
-   background-color: antiquewhite;
+   background-color: rgb(250, 243, 215);
 }
 
 header {
-   background-color: lightcoral;
+   background-color:lightslategray;
    color: antiquewhite;
    text-decoration: none;
    font-size: 20px;
 }
 
+/* logo header */
 .logo {
    display: flex;
    height: 100px;
@@ -28,8 +29,28 @@ nav {
 }
 
 .a {
+   display: flex;
    text-decoration: none;
    color: antiquewhite;
+   margin-right: 20px;
+}
+
+/* joke container */
+#jokeBox{
+   display: flex;
+   padding-top: 100px;
+   position: static;
+   /* height: 60%; */
+   border-radius: 10px;
+   margin-left: 30px;
+   flex-direction:column;
+   background-color: rgb(240, 186, 36);
+
+}
+
+.class{
+   /* display: flex; */
+   background-color: grey;
 }
 
 main{
@@ -48,12 +69,34 @@ main{
 }
 
 .footer {
-   position: relative;
+   /* position: fixed; */
    bottom: 0;
    width: 100%;
    background-color: lightslategray;
    color: antiquewhite;
+
 }
+
+/*  labelfo the title text */
+.label{
+   display: flex;
+   padding-top: 40px;
+}
+/* label for the entire text in footer */
+#label{
+   padding-bottom: 40px;
+}
+
+/* footer tektok word */
+#tektok{
+   display: flex;
+   justify-items: center;
+   margin-top: 100px
+}
+
+
+
+
 
 
 
