@@ -1,35 +1,41 @@
-<aside class="nav col-2">
-        <h2 class="px-3">Hello, User!</h2>
-        <nav>
-          <p>Nav</p>
-          <p>Nav</p>
-          <p>Nav</p>
-        </nav>
-      </aside>
+<aside class="col-2">
+  <h2 class="px-3">Hello, {{firstname}}!</h2>
+</aside>
 
-      <section class="user-post col-3">
-        <h3 class="display-flex justify-center">README.md</h3>
-        <div class="post m-3 p-1">
-          <p>Hi this is an about me, write what you want about yourself let people know who you are blah blah blah blah</p>
-        </div>
-      </section>
-      <section class="user-post col-3">
-        <h3 class="display-flex justify-center">Queries Made</h3>
-        <div class="post m-3 p-1">
-          <p>post info blah blah blah</p>
-        </div>
-        <div class="post m-3 p-1">
-          <p>post info blah blah blah</p>
-        </div>
-        <div class="post m-3 p-1">
-          <p>post info blah blah blah</p>
-        </div>
-      </section>
-      <section class="user-post col-3">
-        <h3 class="display-flex justify-center">Edit Profile</h3>
-        <div class="post m-3 p-1">
-          <p>change email</p>
-          <p>change password</p>
-          <p>Edit README</p>
-        </div>
-      </section>
+<section class="user-post col-3">
+  <h3 class="display-flex justify-center">README.md</h3>
+  <div class="post m-3 p-1">
+    <p>Hi this is an about me, write what you want about yourself let people know who you are blah blah blah blah</p>
+  </div>
+</section>
+<section class="user-post col-3">
+  <h3 class="display-flex justify-center">Queries Made</h3>
+  {{#each posts as |post|}}
+  <div class="post m-3 p-1">
+    <p>{{content}}</p>
+  </div>
+  {{/each}}
+  <div class="post m-3 p-1">
+</section>
+<section class="user-post col-2">
+  <h3 class="display-flex justify-center">Edit Profile</h3>
+  <div class="post m-3 p-1">
+    <p>change email</p>
+    <p>change password</p>
+    <p>Edit README</p>
+  </div>
+</section>
+<section class="Relations col-1">
+  <h5>Followers</h5>
+  {{#each followers as |user|}}
+  <div class="followers m-3 p-1">
+    <p><img src="{{profile_pic}}" alt="profile-pic" class="profile-pic" />{{username}}</p>
+  </div>
+  {{/each}}
+  <h5>Following</h5>
+  {{#each following as |user|}}
+  <div class="followers m-3 p-1">
+    <p><img src="{{profile_pic}}" alt="profile-pic" class="profile-pic" />{{username}}</p>
+  </div>
+  {{/each}}
+</section>

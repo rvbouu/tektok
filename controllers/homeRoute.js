@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post, User, Following } = require("../models")
+const { Post, User, Relations } = require("../models")
 const withAuth = require("../lib/auth");
 
 // get route findall posts
@@ -26,13 +26,13 @@ router.get("/", async (req, res) => {
   }
 })
 
-router.get('/resources', async(req, res) => {
-  res.render('resources',{
+router.get('/resources', async (req, res) => {
+  res.render('resources', {
     logged_in: req.session.logged_in
   })
 })
-router.get('/games', async(req, res) => {
-  res.render('games',{
+router.get('/games', async (req, res) => {
+  res.render('games', {
     logged_in: req.session.logged_in
   })
 })
@@ -42,8 +42,20 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Post }, {model: Following}],
+      include: [{ model: Post },
+      {
+        model: User,
+        through: Relations,
+        as: 'followers'
+      },
+      {
+        model: User,
+        through: Relations,
+        as: 'following'
+      }
+      ],
     });
+    console.log('TEST: ',userData)
 
     const user = userData.get({ plain: true });
 
@@ -52,6 +64,7 @@ router.get('/profile', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -60,18 +73,32 @@ router.get('/profile', withAuth, async (req, res) => {
 
 router.get('/profile/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.user_id, {
-      attributes:{ exclude: ['password'] },
-      include: [{model: Post} , {model:Following}],
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.params.id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post },
+      {
+        model: User,
+        through: Relations,
+        as: 'followers'
+      },
+      {
+        model: User,
+        through: Relations,
+        as: 'following'
+      }
+      ],
     });
+    console.log('TEST: ',userData)
 
-    const project = projectData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
     res.render('profile', {
-      ...profile,
-      logged_in: req.session.logged_in
+      ...user,
+      logged_in: true
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -89,12 +116,6 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
-// router.get('/profile', async(req, res) => {
-//   res.render('profile',{
-//     logged_in: req.session.logged_in
-//   })
-// })
 
 router.get('/comingsoon', async (req, res) => {
   res.render('comingsoon', {
