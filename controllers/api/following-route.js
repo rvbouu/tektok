@@ -1,16 +1,17 @@
 const router = require('express').Router();
-const {Following, User} = require('../../models');
+const {Relations, User} = require('../../models');
 
 router.post('/', async (req, res) => {
   try{
     console.log('req.body info',req.body)
-    // const userData = await User.findByPk(req.body.followed_users);
-    // console.log('userData',userData)
-    // const followData = await Following.create({
-    //   followed_users: req.body.followed_users
-    // });
+    const userData = await User.findByPk(req.body.following);
+    console.log('userData',userData)
+    const followData = await Relations.create({
+      following: req.body.following,
+      follower: req.session.user_id
+    });
 
-    // console.log('followData', followData)
+    console.log('followData', followData)
   }
   catch (err){
     console.error(err);

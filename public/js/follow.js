@@ -10,7 +10,7 @@ for(let i = 0; i < followBtn.length; i++){
       method: 'POST',
       body: JSON.stringify({
         following: follow,
-        follower: req.session.user_id
+        // follower: req.session.user_id
       }),
       headers: { 'Content-Type': 'application/json' }
     })
