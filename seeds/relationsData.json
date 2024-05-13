@@ -1,50 +1,46 @@
 [
   {
     "follower": 1,
-    "followee": 2
+    "following": 2
   },
   {
     "follower": 1,
-    "followee": 3
+    "following": 3
   },
   {
     "follower": 1,
-    "followee": 4
+    "following": 4
   },
   {
     "follower": 2,
-    "followee": 1
+    "following": 1
   },
   {
     "follower": 2,
-    "followee": 3
+    "following": 3
   },
   {
     "follower": 2,
-    "followee": 4
+    "following": 4
   },
   {
     "follower": 3,
-    "followee": 1
+    "following": 1
   },
   {
     "follower": 3,
-    "followee": 2
-  },
-  {
-    "follower": 3,
-    "followee": 4
+    "following": 2
   },
   {
     "follower": 4,
-    "followee": 1
+    "following": 1
   },
   {
     "follower": 4,
-    "followee": 2
+    "following": 2
   },
   {
     "follower": 4,
-    "followee": 3
+    "following": 3
   }
 ]

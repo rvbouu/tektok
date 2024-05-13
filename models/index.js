@@ -1,6 +1,6 @@
 const User = require('./User');
 const Post = require('./Post');
-const Following = require('./Following');
+const Relations = require('./Relations');
 
 User.hasMany(Post, {
   foreignKey: 'user_id',
@@ -12,16 +12,16 @@ Post.belongsTo(User, {
 })
 
 User.belongsToMany(User, {
-  foreignKey: 'follower',
+  foreignKey: 'following',
   onDelete: 'SET NULL',
-  through: Following,
+  through: Relations,
   as: 'followers'
 })
 User.belongsToMany(User, {
-  foreignKey: 'followee',
+  foreignKey: 'follower',
   onDelete: 'SET NULL',
-  through: Following,
-  as: 'followees'
+  through: Relations,
+  as: 'following'
 })
 
-module.exports = { User, Post, Following }
+module.exports = { User, Post, Relations }

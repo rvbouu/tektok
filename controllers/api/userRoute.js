@@ -1,16 +1,23 @@
 const router = require('express').Router();
-const {User, Following} = require('../../models');
+const { User, Relations } = require('../../models');
 
 // const { pool } = require('../app'); // Import the pool from app.js
 // USING FOR TESTING IN POSTMAN vb - WILL DELETE LATER
 router.get('/:id', async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
-      include: {
-        model: User,
-        through: Following,
-        as: "followers"
-      }
+      include: [
+        {
+          model: User,
+          through: Relations,
+          as: "followers"
+        },
+        {
+          model: User,
+          through: Relations,
+          as: "following"
+        },
+      ]
     });
     if (!userData) {
       res.status(404).json({ status: `error`, message: `No category found with that id.` });
@@ -49,7 +56,7 @@ router.post('/', async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({status: 'Error creating user', msg: error});
+    res.status(500).json({ status: 'Error creating user', msg: error });
   }
 });
 
@@ -61,29 +68,29 @@ router.post('/login', async (req, res) => {
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
-        return;
-      }
-        // Passwords don't match
-        const validPassword = await userData.checkPassword(req.body.password);
+      return;
+    }
+    // Passwords don't match
+    const validPassword = await userData.checkPassword(req.body.password);
 
-        if (!validPassword) {
-          res
-            .status(400)
-            .json({ message: 'Incorrect email or password, please try again' });
-          return;
-        }
-        req.session.save(() => {
-          console.log('req params', userData.id)
-          console.log('req body', req.body)
-          req.session.user_id = userData.id;
-          req.session.logged_in = true;
-          res.json({ user: userData, message: 'You are now logged in!' });
-          console.log(req.session)
-        });
-    
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+    req.session.save(() => {
+      console.log('req params', userData.id)
+      console.log('req body', req.body)
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      res.json({ user: userData, message: 'You are now logged in!' });
+      console.log(req.session)
+    });
+
   } catch (error) {
     console.error(error);
-    res.status(500).json({status: 'Error logging in', msg: err});
+    res.status(500).json({ status: 'Error logging in', msg: err });
   }
 });
 
