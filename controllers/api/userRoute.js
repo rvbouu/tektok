@@ -16,7 +16,7 @@ router.get('/:id', async (req, res) => {
           model: User,
           through: Relations,
           as: "following"
-        },
+        }
       ]
     });
     if (!userData) {

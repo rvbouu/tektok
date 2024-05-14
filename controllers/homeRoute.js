@@ -113,7 +113,7 @@ router.get('/profile', withAuth, async (req, res) => {
       }
       ],
     });
-    console.log('TEST: ',userData)
+    console.log('TEST:123 ',userData)
 
     const user = userData.get({ plain: true });
 
@@ -145,6 +145,7 @@ router.get('/profile/:id', withAuth, async (req, res) => {
       }
       ],
     });
+
     console.log('TEST: ',userData)
     
     // res.render('profile', {
@@ -153,7 +154,7 @@ router.get('/profile/:id', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('otherprofiles', {
       ...user,
       logged_in: true
     });
@@ -162,10 +163,6 @@ router.get('/profile/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-
-
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -179,6 +176,12 @@ router.get('/login', (req, res) => {
 
 router.get('/comingsoon', async (req, res) => {
   res.render('comingsoon', {
+    logged_in: req.session.logged_in
+  })
+});
+
+router.get('/aboutus', async (req, res) => {
+  res.render('aboutus', {
     logged_in: req.session.logged_in
   })
 })

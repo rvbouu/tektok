@@ -1,13 +1,13 @@
-<aside id ="jokeBox"class="jokes col-3 m-1">
+<aside id ="jokeBox"class="jokes col-2">
   <h3>Coding Joke of the Day</h3>
   <p>{{{get_joke}}}</p>
 </aside>
 <div>
 
 </div>
-<section class="post-area col-md-6">
+<section class="post-area col-md-7">
   {{#each posts as |post|}}
-  <div class="card m-3 border-0 shadow-sm" style="background-color: #F5F5F5; border-radius: 10px; border-color:grey">
+  <div class="card m-0 border-0 shadow-sm" style="background-color: #F5F5F5; border-radius: 10px; border-color:grey">
     <div class="card-body">
       <a href="/profile/{{user.id}}" class="other-user">
       <h5 class="card-title user user-info">
@@ -22,13 +22,13 @@
 </section>
 
 
-<aside id ="pcards"styleclass="suggested col-md-3">
-  <h3>Suggested Users</h3>
+<aside id ="pcards" styleclass="suggested col-md-4">
+  <h3 class="sugest">Suggested Users</h3>
   {{#each users as |user|}}
 
-  <div class="card m-3 border-0 shadow-sm" style="background-color: #F5F5F5; border-radius: 10px;  border-color:grey">
-    <div class="card-body">
-      <a href="/profile/{{user.id}}" class="other-user">
+  <div class="card m-3 border-0 shadow-sm" style="background-color: #F5F5F5; border-radius: 10px;  border-color:rgb(221, 230, 244)grey">
+    <div id="rightCard" class="card-body">
+      <a href="/profile/{{user.id}}" class="other-user" id="cardrow">
       <h5 class="card-title user">
         <img src="{{profile_pic}}" alt="profile pic" class="profile-pic">{{username}}
       </h5>
