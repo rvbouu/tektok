@@ -54,6 +54,10 @@ nav {
    background-color: grey;
 }
 
+#asidecards{
+  justify-content: centers;
+}
+
 main{
    width: 100vw;
 }
@@ -63,7 +67,14 @@ main{
    width: 40px;
    height: 40px;
 }
-
+/* button design */
+.follow{
+border-width: 0;
+justify-items: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+background-color: rgb(240, 186, 36);
+border-radius: 5px;
+}
 .user {
    display: flex;
    align-items: center;
