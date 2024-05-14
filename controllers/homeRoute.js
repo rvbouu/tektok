@@ -26,19 +26,77 @@ router.get("/", async (req, res) => {
   }
 })
 
-router.get('/resources', async (req, res) => {
-  res.render('resources', {
-    logged_in: req.session.logged_in
-  })
-})
-router.get('/games', async (req, res) => {
+
+
+
+
+
+router.get('/resources', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('resources', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/resources');
+    return;
+  }
+
+  res.render('login');
+});
+
+
+
+router.get('/games', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password']},
+      include: [{model: Post}],
+    });
+   
+  const user = userData.get({ plain: true });
+
   res.render('games', {
-    logged_in: req.session.logged_in
-  })
-})
+    ...user,
+    logged_in: true
+  });
+} catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+}
+});
+// router.get('/login', (req, res) => {
+//   // If the user is already logged in, redirect the request to another route
+//   if (req.session.logged_in) {
+//     res.redirect('/games');
+//     return;
+//   }
+
+  // res.render('login');
+// });
+
+
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
+    // res.render('profile', {
+    //   logged_in: req.session.logged_in
+    // })
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
@@ -69,11 +127,9 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-
-
-router.get('/profile/:id', async (req, res) => {
+router.get('/profile/:id', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
+ // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.params.id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Post },
@@ -89,7 +145,12 @@ router.get('/profile/:id', async (req, res) => {
       }
       ],
     });
-    console.log('TEST:123 ',userData)
+
+    console.log('TEST: ',userData)
+    
+    // res.render('profile', {
+    //   logged_in: req.session.logged_in
+    // })
 
     const user = userData.get({ plain: true });
 
@@ -102,10 +163,6 @@ router.get('/profile/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-
-
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route

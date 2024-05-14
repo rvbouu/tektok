@@ -7,7 +7,9 @@ const logout = async () => {
   if (response.ok) {
     document.location.replace('/');
   } else {
-    alert(response.statusText);
+    const errorMessage = document.createElement('p');
+    errorMessage.textContent = `Error: ${response.statusText}`;
+    document.body.appendChild(errorMessage);
   }
 };
 
