@@ -17,6 +17,7 @@ User.belongsToMany(User, {
   through: Relations,
   as: 'followers'
 })
+
 User.belongsToMany(User, {
   foreignKey: 'follower',
   onDelete: 'SET NULL',

@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
-const { all } = require('../controllers');
 
 class User extends Model {
   checkPassword(loginPw){
@@ -52,6 +51,11 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue:'https://assets-global.website-files.com/6344d53d2aaf56043be2ca60/63988bbcf41e7b8faf9131a1_Account-Icon.webp'
+    },
+    readme: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'Write whatever you want about yourself!'
     }
   },
   {
