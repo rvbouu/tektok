@@ -185,6 +185,8 @@ router.get('/aboutus', async (req, res) => {
     logged_in: req.session.logged_in
   })
 })
+
+
 //render homepage
 //
 
