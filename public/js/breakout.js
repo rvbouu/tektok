@@ -1,4 +1,5 @@
 const canvas = document.getElementById("myCanvas");
+const messageElement = document.getElementById("message");
 const ctx = canvas.getContext("2d");
 const ballRadius = 10;
 
@@ -38,6 +39,10 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 
+function showMessage(message) {
+  messageElement.textContent = message;
+}
+
 function keyDownHandler(e) {
   if (e.key == "Right" || e.key == "ArrowRight") {
     rightPressed = true;
@@ -75,8 +80,11 @@ function collisionDetection() {
           b.status = 0;
           score++;
           if (score == brickRowCount * brickColumnCount) {
-            alert("YOU WIN, CONGRATS!");
-            document.location.reload();
+            showMessage("YOU WIN, CONGRATS!");
+            //setTimeout(function(){
+              document.location.reload();
+            //}, 3000)
+            
           }
         }
       }
@@ -146,8 +154,10 @@ function draw() {
     } else {
       lives--;
       if (!lives) {
-        alert("GAME OVER");
+        showMessage("GAME OVER");
+        //setTimeout(function(){
         document.location.reload();
+      //}, 3000);
       } else {
         x = canvas.width / 2;
         y = canvas.height - 30;
