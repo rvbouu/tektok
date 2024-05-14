@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Following extends Model {}
+class Relations extends Model {}
 
-Following.init(
+Relations.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,7 +11,14 @@ Following.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    followed_users: {
+    follower: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    },
+    following: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
@@ -38,8 +45,8 @@ Following.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'following',
+    modelName: 'relations',
   }
 )
 
-module.exports = Following;
+module.exports = Relations;

@@ -50,7 +50,8 @@ User.init(
     },
     profile_pic: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false,
+      defaultValue:'https://assets-global.website-files.com/6344d53d2aaf56043be2ca60/63988bbcf41e7b8faf9131a1_Account-Icon.webp'
     }
   },
   {
