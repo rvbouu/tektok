@@ -38,36 +38,45 @@ nav {
 /* joke container */
 #jokeBox{
    display: flex;
+   margin-top: -25px;
    padding-top: 100px;
    position: static;
    align-items: center;
-   /* height: 60%; */
-   border-radius: 10px;
    margin-left: 30px;
    flex-direction:column;
    background-color: rgb(240, 186, 36);
-
 }
 
-.class{
-   /* display: flex; */
-   background-color: grey;
+/* suggested text */
+.sugest{
+   display: flex;
+   padding-left: 45px;
+   justify-content: center;
 }
-
 #asidecards{
   justify-content: centers;
 }
+
 
 main{
    width: 100vw;
 }
 
+/* the card on the right hand side */
+#pcards{
+   margin-top: -25px;
+   padding-right: 90px;
+   background-color:rgb(240, 186, 36);
+}
+
+/* profile pic decor */
 .profile-pic{
    border-radius: 50%;
    width: 40px;
    height: 40px;
 }
-/* button design */
+
+/* follow button */
 .follow{
 border-width: 0;
 justify-items: center;
@@ -75,13 +84,20 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 background-color: rgb(240, 186, 36);
 border-radius: 5px;
 }
+
+/* cardtext label on the right */
 .user {
    display: flex;
    align-items: center;
 }
 
+/* follow card */
+#rightCard{
+   padding-right: 50px;
+}
+
+/* footer */
 .footer {
-   /* position: fixed; */
    bottom: 0;
    width: 100%;
    background-color: rgb(81, 92, 104);
@@ -89,7 +105,7 @@ border-radius: 5px;
 
 }
 
-/*  labelfo the title text */
+/*  label for the title text on the footer bar */
 .label{
    display: flex;
    padding-top: 40px;
@@ -99,7 +115,7 @@ border-radius: 5px;
    padding-bottom: 40px;
 }
 
-/* footer tektok word */
+/* footer tektok text */
 #tektok{
    display: flex;
    justify-items: center;
