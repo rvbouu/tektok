@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
-const { all } = require('../controllers');
 
 class User extends Model {
-  checkPassword(loginPw){
+  checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
@@ -31,7 +30,7 @@ User.init(
       unique: true,
       validate: {
         isEmail: true
-      }
+      },
     },
     username: {
       type: DataTypes.STRING,
@@ -39,7 +38,7 @@ User.init(
       unique: true,
       validate: {
         len: [5]
-      }
+      },
     },
     password: {
       type: DataTypes.STRING,
@@ -51,12 +50,21 @@ User.init(
     profile_pic: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue:'https://assets-global.website-files.com/6344d53d2aaf56043be2ca60/63988bbcf41e7b8faf9131a1_Account-Icon.webp'
+      defaultValue: 'https://assets-global.website-files.com/6344d53d2aaf56043be2ca60/63988bbcf41e7b8faf9131a1_Account-Icon.webp'
+    },
+    readme: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'Write whatever you want about yourself!'
     }
   },
   {
     hooks: {
       beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      afterValidate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
