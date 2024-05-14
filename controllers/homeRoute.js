@@ -65,20 +65,20 @@ router.get('/login', (req, res) => {
 router.get('/games', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password']},
-      include: [{model: Post}],
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post }],
     });
-   
-  const user = userData.get({ plain: true });
 
-  res.render('games', {
-    ...user,
-    logged_in: true
-  });
-} catch (err) {
-  console.log(err);
-  res.status(500).json(err);
-}
+    const user = userData.get({ plain: true });
+
+    res.render('games', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 // router.get('/login', (req, res) => {
 //   // If the user is already logged in, redirect the request to another route
@@ -87,7 +87,7 @@ router.get('/games', withAuth, async (req, res) => {
 //     return;
 //   }
 
-  // res.render('login');
+// res.render('login');
 // });
 
 
@@ -113,7 +113,7 @@ router.get('/profile', withAuth, async (req, res) => {
       }
       ],
     });
-    console.log('TEST:123 ',userData)
+    console.log('TEST: ', userData)
 
     const user = userData.get({ plain: true });
 
@@ -129,7 +129,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
 router.get('/profile/:id', withAuth, async (req, res) => {
   try {
- // Find the logged in user based on the session ID
+    // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.params.id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Post },
@@ -146,8 +146,8 @@ router.get('/profile/:id', withAuth, async (req, res) => {
       ],
     });
 
-    console.log('TEST: ',userData)
-    
+    console.log('TEST: ', userData.following)
+
     // res.render('profile', {
     //   logged_in: req.session.logged_in
     // })

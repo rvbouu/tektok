@@ -2,7 +2,7 @@
 <aside class="col-4">
   <h3 class="display-flex justify-center">README.md</h3>
   <div class="post m-3 p-1">
-    <img src="{{profile_pic}}" alt="profile pic" class="profile-pic"/>
+    <img src="{{profile_pic}}" alt="profile pic" class="profile-pic" />
     <p>Hi this is an about me, write what you want about yourself let people know who you are blah blah blah blah</p>
   </div>
 </aside>
@@ -19,17 +19,17 @@
   <section id="follower-sect">
     <h5>Followers</h5>
     {{#each followers as |user|}}
-    <div class="followers m-3 p-1">
+    <a href="/profile/{{id}}" class="followers m-3 p-1">
       <p><img src="{{profile_pic}}" alt="profile-pic" class="profile-pic" />{{username}}</p>
-    </div>
+    </a>
     {{/each}}
   </section>
   <section id="following-sect">
     <h5>Following</h5>
     {{#each following as |user|}}
-    <div class="followers m-3 p-1">
-      <p><img src="{{profile_pic}}" alt="profile-pic" class="profile-pic" />{{username}}</p>
-    </div>
+      <a href="/profile/{{id}}" class="followers m-3 p-1">
+        <p><img src="{{profile_pic}}" alt="profile-pic" class="profile-pic" />{{username}}</p>
+      </a>
     {{/each}}
   </section>
 </section>
