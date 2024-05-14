@@ -1,10 +1,9 @@
-<aside class="col-2">
-  <h2 class="px-3">Hello, {{firstname}}!</h2>
-</aside>
+<h2 class="px-3 col-12 text-center">Hello, {{firstname}}!</h2>
 
 <section class="user-post col-3">
   <h3 class="display-flex justify-center">README.md</h3>
   <div class="post m-3 p-1">
+    <img src="{{profile_pic}}" alt="profile pic" class="profile-pic" />
     <p>Hi this is an about me, write what you want about yourself let people know who you are blah blah blah blah</p>
   </div>
 </section>
@@ -18,27 +17,42 @@
   {{/each}}
   <div class="post m-3 p-1">
 </section>
-
-<section class="user-post col-2">
+<section class="update-user col-3">
   <h3 class="display-flex justify-center">Edit Profile</h3>
-  <div class="post m-3 p-1">
-    <p>change email</p>
-    <p>change password</p>
-    <p>Edit README</p>
-  </div>
-</section>
+  <form class="form update-form">
+    <div class="form-group">
+      <label for="email-update">Email:</label>
+      <input class="form-input" type="text" id="email-update" />
+      <div id="email-error"></div>
+    </div>
+    <div class="form-group">
+      <label for="password-signup">Password:</label>
+      <input class="form-input" type="password" id="password-update" />
+      <div id="pw-error"></div>
+    </div>
+    <div class="form-group">
+      <label for="readme-update">README.md:</label>
+      <textarea class="form-input" type="text" id="readme-update"></textarea>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary update-btn" type="submit" id="{{id}}">Update</button>
+    </div>
+  </form>
+    <div id="update-msg"></div>
+  </section>
+  <section class="relations col-1">
+    <h5>Followers</h5>
+    {{#each followers as |user|}}
+    <div class="followers m-3 p-1">
+      <p><img src="{{profile_pic}}" alt="profile-pic" class="profile-pic" />{{username}}</p>
+    </div>
+    {{/each}}
+    <h5>Following</h5>
+    {{#each following as |user|}}
+    <div class="followers m-3 p-1">
+      <p><img src="{{profile_pic}}" alt="profile-pic" class="profile-pic" />{{username}}</p>
+    </div>
+    {{/each}}
+  </section>
 
-<section class="Relations col-1">
-  <h5>Followers</h5>
-  {{#each followers as |user|}}
-  <div class="followers m-3 p-1">
-    <p><img src="{{profile_pic}}" alt="profile-pic" class="profile-pic" />{{username}}</p>
-  </div>
-  {{/each}}
-  <h5>Following</h5>
-  {{#each following as |user|}}
-  <div class="followers m-3 p-1">
-    <p><img src="{{profile_pic}}" alt="profile-pic" class="profile-pic" />{{username}}</p>
-  </div>
-  {{/each}}
-</section>
+<script src="/js/update.js"></script>
