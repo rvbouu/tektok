@@ -2,7 +2,7 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
-  const username = document.querySelector('#user-name').value.trim();
+  const username = document.getElementById('username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
   if (username && password) {
@@ -25,16 +25,16 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const fname = document.querySelector('#fname-signup').value.trim();
-  const lname = document.querySelector('#lname-signup').value.trim();
-  const username = document.querySelector('#username-signup')
+  const firstname = document.querySelector('#fname-signup').value.trim();
+  const lastname = document.querySelector('#lname-signup').value.trim();
+  const username = document.getElementById('username-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-  if (fname && lname && username && email && password) {
+  if (firstname && lastname && username && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ fname, lname, username, email, password }),
+      body: JSON.stringify({ firstname, lastname, username, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
