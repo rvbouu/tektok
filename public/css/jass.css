@@ -425,7 +425,7 @@ a {
 }
 
 a:hover {
-  color: #065b83;
+  color:rgb(240, 186, 36);
   text-decoration: underline;
 }
 

@@ -55,7 +55,7 @@ router.get('/profile', withAuth, async (req, res) => {
       }
       ],
     });
-    console.log('TEST: ',userData)
+    console.log('TEST:123 ',userData)
 
     const user = userData.get({ plain: true });
 
@@ -89,11 +89,11 @@ router.get('/profile/:id', async (req, res) => {
       }
       ],
     });
-    console.log('TEST: ',userData)
+    console.log('TEST:123 ',userData)
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('otherprofiles', {
       ...user,
       logged_in: true
     });

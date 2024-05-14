@@ -6,7 +6,7 @@ for(let i = 0; i < followBtn.length; i++){
     const follow = e.target.getAttribute('id');
     console.log(follow)
 
-    const res = await fetch('/api/following', {
+    const res = await fetch('/api/relations', {
       method: 'POST',
       body: JSON.stringify({
         following: follow,

@@ -1,16 +1,10 @@
 const router = require('express').Router();
-const followRoute = require('./following-route');
-//const gameRoute = require('./gameRoute');
+const relationsRoute = require('./relationsRoute');
 const userRoute = require('./userRoute');
-// const resourceRoute = require('./resourceRoute')
+const updateRoute = require('./updateRoute')
 
-//router.use('/games', gameRoute);
-router.use('/following', followRoute);
+router.use('/relations', relationsRoute);
 router.use('/users', userRoute);
-// router.use('/resources', resourceRoute);
+router.use('/update', updateRoute)
 
 module.exports = router;
-
-//can delete the commented out lines
-
-// commenting to add index.js back
