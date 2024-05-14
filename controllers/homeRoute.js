@@ -121,6 +121,12 @@ router.get('/comingsoon', async (req, res) => {
   res.render('comingsoon', {
     logged_in: req.session.logged_in
   })
+});
+
+router.get('/aboutus', async (req, res) => {
+  res.render('aboutus', {
+    logged_in: req.session.logged_in
+  })
 })
 //render homepage
 //
