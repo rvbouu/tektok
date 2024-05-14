@@ -24,9 +24,18 @@ header {
 
 nav {
    color: antiquewhite;
-   gap: 10px;
+   gap: 20px;
    display: flex;
+   font-size: 25px;
 }
+
+ul.nav-list {
+   list-style-type: none;
+ }
+ 
+ .nav-item {
+   display: inline;
+ }
 
 .a {
    display: flex;
@@ -202,9 +211,10 @@ border-radius: 5px;
   
  }
 
-
-
-
+ :root {
+   --animate-duration: 2s;
+   --animate-delay: 1s;
+ }
 
 
 

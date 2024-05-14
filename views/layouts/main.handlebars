@@ -4,7 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/jass.css">
   <title>Tek Tok</title>
 </head>
@@ -14,24 +19,47 @@
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-      <img src="/assets/tektok.png" alt="logo" class="logo px-5">
-      <nav>
-        <a href="/" class="a">Home</a>
-        <a href="/resources" class="a">Resources</a>
-        <a href="/games" class="a">Games</a>
-        <a href="/profile" class="a">Profile | </a>
+     
+      <div class="animate__animated animate__fadeInRightBig">
+      <object id="svg1"  data="/assets/tektokyellowtext.svg" type="image/svg+xml" width="150" height="150"></object>
+      </div>
+     
 
+      <nav>
+        {{!-- <div class="animate__animated animate__fadeInRight"> --}}
+    <div>
+      <ul class="row justify-content-around mr-5 nav-list">
+       <li class="nav-item animate__animated animate__fadeInRightBig">
+          <a href="/" class="a">Home</a>
+       </li>
+       <li class="nav-item animate__animated animate__fadeInRightBig">
+          <a href="/resources" class="a">Resources</a>
+       </li> 
+       <li class="nav-item animate__animated animate__fadeInRightBig">
+        <a href="/games" class="a">Games</a>
+       </li>
+       <li class="nav-item animate__animated animate__fadeInRightBig">
+         <a href="/profile" class="a">Profile</a>
+       </li>
+    
+      
         {{#if logged_in}}
+        <li class="animate__animated animate__fadeInRightBig">
         <button class="no-button" id="logout">Logout</button>
+        </li>
         {{else}}
         <!-- else -->
+        <li class="animate__animated animate__fadeInRightBig">
         <a href="/login" class="a">Login</a>
+        </li>
         {{/if}}
         <!-- end if -->
         {{!--
         </li>
         </ul> --}}
-      </nav>
+       </ul>
+    </div>
+     </nav>
     </header>
 
     <main class="container-fluid mt-5 row">
@@ -88,6 +116,7 @@
   {{#if logged_in}}
   <script type="text/javascript" src="/js/logout.js"></script>
   {{/if}}
+  {{!-- <script src="anime.min.js"></script> --}}
 </body>
 
 </html>
