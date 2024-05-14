@@ -1,6 +1,6 @@
 const updateBtn = document.querySelector('.update-btn')
 
-updateBtn.addEventListener('click', async function(e){
+updateBtn.addEventListener('click', function (e) {
   e.preventDefault();
 
   const email = document.getElementById('email-update').value.trim();
@@ -9,18 +9,31 @@ updateBtn.addEventListener('click', async function(e){
   const user = e.target.getAttribute('id')
   console.log("click")
   console.log(user);
-  
+
+  const emailError = document.getElementById('email-error');
+  const pwError = document.getElementById('pw-error');
   const msg = document.getElementById('update-msg')
 
-  const res = await fetch(`/api/update/${user}`, {
+  const res = fetch(`/api/update/${user}`, {
     method: 'PUT',
-    body: JSON.stringify({email, pw, readme}),
-    headers: {'Content-Type': 'application/json'}
+    body: JSON.stringify({ email, pw, readme }),
+    headers: { 'Content-Type': 'application/json' }
   });
 
-  if(res.ok){
-    msg.innerHTML = `<p>Updated Successfully!</p>`
-  }else{
-    msg.innerHTML = `<p>There was an error updating your account.</p>`
+  pwError.innerHTML = '';
+  emailError.innerHTML = '';
+
+  if(pw.length < 8){
+    pwError.innerHTML = `<p class="text-danger">Password must be 8 or more characters.</p>`;
+    return;
+  } else{
+    emailError.innerHTML = `<p class="text-danger">Email already in use.</p>`
+  }
+
+  pwError.innerHTML = '';
+  emailError.innerHTML = '';
+
+  if (res.ok) {
+    msg.innerHTML = `<p class="text-success">Updated Successfully!</p>`
   };
 });
