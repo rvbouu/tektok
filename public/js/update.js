@@ -1,6 +1,6 @@
 const updateBtn = document.querySelector('.update-btn')
 
-updateBtn.addEventListener('click', function (e) {
+updateBtn.addEventListener('click', async function (e) {
   e.preventDefault();
 
   const email = document.getElementById('email-update').value.trim();
@@ -14,7 +14,7 @@ updateBtn.addEventListener('click', function (e) {
   const pwError = document.getElementById('pw-error');
   const msg = document.getElementById('update-msg')
 
-  const res = fetch(`/api/update/${user}`, {
+  const res = await fetch(`/api/update/${user}`, {
     method: 'PUT',
     body: JSON.stringify({ email, pw, readme }),
     headers: { 'Content-Type': 'application/json' }
@@ -22,18 +22,16 @@ updateBtn.addEventListener('click', function (e) {
 
   pwError.innerHTML = '';
   emailError.innerHTML = '';
-
-  if(pw.length < 8){
+  
+  if (pw.length < 8) {
     pwError.innerHTML = `<p class="text-danger">Password must be 8 or more characters.</p>`;
     return;
-  } else{
+  } else {
     emailError.innerHTML = `<p class="text-danger">Email already in use.</p>`
   }
-
-  pwError.innerHTML = '';
-  emailError.innerHTML = '';
-
   if (res.ok) {
-    msg.innerHTML = `<p class="text-success">Updated Successfully!</p>`
+    emailError.innerHTML = '';
+    msg.innerHTML = `<p class="text-info">Updated Successfully!</p>`;
+    return;
   };
 });

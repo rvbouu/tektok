@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class User extends Model {
-  checkPassword(loginPw){
+  checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
@@ -27,18 +27,18 @@ User.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
         isEmail: true
       },
-      unique: true,
     },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
         len: [5]
       },
-      unique: true
     },
     password: {
       type: DataTypes.STRING,
@@ -50,7 +50,7 @@ User.init(
     profile_pic: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue:'https://assets-global.website-files.com/6344d53d2aaf56043be2ca60/63988bbcf41e7b8faf9131a1_Account-Icon.webp'
+      defaultValue: 'https://assets-global.website-files.com/6344d53d2aaf56043be2ca60/63988bbcf41e7b8faf9131a1_Account-Icon.webp'
     },
     readme: {
       type: DataTypes.STRING,
