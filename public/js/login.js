@@ -23,22 +23,6 @@ const loginFormHandler = async (event) => {
   } else {
     errorMessageElement.textContent = 'An error occurred. Please try again.';
   }
-
-  // if (username && password) {
-  //   // Send a POST request to the API endpoint
-  //   const response = await fetch('/api/users/login', {
-  //     method: 'POST',
-  //     body: JSON.stringify({ username, password }),
-  //     headers: { 'Content-Type': 'application/json' },
-  //   });
-
-  //   if (response.ok) {
-  //     // If successful, redirect the browser to the homepage page
-  //     document.location.replace('/');
-  //   } else {
-  //     alert(response.statusText);
-  //   }
-  // }
 };
 
 const signupFormHandler = async (event) => {
