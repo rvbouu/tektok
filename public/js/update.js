@@ -27,7 +27,7 @@ updateBtn.addEventListener('click', async function (e) {
     pwError.innerHTML = `<p class="text-danger">Password must be 8 or more characters.</p>`;
     return;
   } else {
-    emailError.innerHTML = `<p class="text-danger">Email already in use.</p>`
+    emailError.innerHTML = `<p class="text-danger">There is an error with your email.</p>`
   }
   if (res.ok) {
     emailError.innerHTML = '';
