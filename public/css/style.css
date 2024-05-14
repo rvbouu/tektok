@@ -133,6 +133,74 @@ border-radius: 5px;
    justify-items: center;
    margin-top: 100px
 }
+/* resourse page */
+.container2{
+   display: flex;
+   background-color:  rgb(240, 186, 36) ;
+   gap: 10px;
+   width: 100%;
+ }
+
+ .cardR1{
+   display: flex;
+   color: aliceblue;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding-top:20px;
+   border-radius: 10px;
+   background-color: rgb(221, 230, 244) ;
+ }
+ .cardR2{
+   display: flex;
+   color: aliceblue;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding-top:20px;
+   border-radius: 10px;
+   background-color: rgb(221, 230, 244) ;
+ }
+ .cardR3{
+   display: flex;
+   color: aliceblue;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding-top:20px;
+   border-radius: 10px;
+   background-color: rgb(221, 230, 244) ;
+ }
+ .cardR4{
+   display: flex;
+   color: aliceblue;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding-top:20px;
+   border-radius: 10px;
+   background-color: rgb(221, 230, 244) ;
+ }
+ .cardR5{
+   display: flex;
+   color: rgb(14, 103, 182);
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding-top:20px;
+   border-radius: 10px;
+   background-color: rgb(221, 230, 244) ;
+ }
+ .cardR6{
+   display: flex;
+   color: black;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding-top:20px;
+   border-radius: 10px;
+  
+ }
 
 
 
