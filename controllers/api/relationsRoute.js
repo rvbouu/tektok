@@ -11,11 +11,26 @@ router.post('/', async (req, res) => {
       follower: req.session.user_id
     });
 
-    console.log('followData', followData)
+    res.json(followData)
   }
   catch (err){
     console.error(err);
-    res.status(500).json({status: 'Error creating user', msg: err});
+    res.status(500).json({status: 'Error following user', msg: err});
+  }
+})
+
+router.delete('/:id', async (req, res) => {
+  try{
+    const followData = await Relations.destroy({where: {
+      following: req.params.id,
+      follower: req.session.user_id
+    }
+    });
+    res.json(followData)
+  }
+  catch(err){
+    console.error(err);
+    res.status(500).json({status: 'Error unfollowing user', msg: err});
   }
 })
 

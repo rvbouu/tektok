@@ -13,14 +13,44 @@ router.get("/", async (req, res) => {
       ]
     })
     const userData = await User.findAll()
+    
     const posts = postData.map((post) => post.get({ plain: true }));
-    const users = userData.map((user) => user.get({ plain: true }));
-    res.render("homepage",
+    
+    if (req.session.logged_in) {
+      const singleUserData = await User.findByPk(req.session.user_id, {
+        include: [{
+          model: User,
+          through: Relations,
+          as: 'followers'
+        },
+        {
+          model: User,
+          through: Relations,
+          as: 'following'
+        }]
+      })
+      const singleUser = singleUserData.get({ plain: true })
+      const following = singleUser.following
+      const usersSerial = userData.map((user) => user.get({ plain: true }))
+      const users = usersSerial.filter((user) => {
+        if (!following.find(person => person.id === user.id) && user.id !== singleUser.id) return user
+      });
+      console.log(users)
+      res.render("homepage",
       {
+        following,
         posts,
         users,
         logged_in: req.session.logged_in
       }); // Render the "homepage" view and pass the posts data
+    } else {
+      res.render("homepage",
+      {
+        posts,
+        logged_in: req.session.logged_in
+      }); // Render the "homepage" view and pass the posts data
+    }
+    
   } catch (err) {
     res.status(500).json({ status: "error", message: err.message });
   }
