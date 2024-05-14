@@ -6,10 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/jass.css">
+    <link rel="icon" href="/assets/apple-icon-180x180.png" />
   <title>Tek Tok</title>
 </head>
-
-
 
 <body>
   <div class="flex-column justify-space-around">
@@ -19,18 +18,13 @@
         <a href="/" class="a">Home</a>
         <a href="/resources" class="a">Resources</a>
         <a href="/games" class="a">Games</a>
-        <a href="/profile" class="a">Profile | </a>
+        <a href="/profile" class="a">Profile</a>|
 
         {{#if logged_in}}
         <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <!-- else -->
         <a href="/login" class="a">Login</a>
         {{/if}}
-        <!-- end if -->
-        {{!--
-        </li>
-        </ul> --}}
       </nav>
     </header>
 
@@ -38,16 +32,11 @@
       {{{body}}}
     </main>
 
-
     <footer class="footer display-flex justify-space-between align-center">
       <div class="container">
         <div class="col">
-
-
-
           <nav>
             <h3 id="tektok" class="col-3">Tek Tok</h3>
-
             <aside id="label" class="col-3">
               <h4 class="label">Learn</h4>
               <a href="/resources" class="a">CSS</a>
@@ -58,7 +47,6 @@
               <br />
               <a href="https://react.dev/" class="a">React</a>
             </aside>
-
             <aside id="label" class="col-3">
               <h4 class="label">About Tek Tok</h4>
               <a href="/aboutus" class="a">Back Story</a>
@@ -67,7 +55,6 @@
               <br />
               <a href="/comingsoon" class="a">Engagemnt</a>
             </aside>
-
             <aside id="label" class="col-3">
               <h4 class="label">Partner With Us</h4>
               <a href="/comingsoon" class="a">Partners</a>
@@ -78,12 +65,10 @@
               <br />
               <a href="/comingsoon" class="a">Testimonials</a>
             </aside>
-
           </nav>
         </div>
       </div>
     </footer>
-
   </div>
   {{#if logged_in}}
   <script type="text/javascript" src="/js/logout.js"></script>
