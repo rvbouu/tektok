@@ -42,7 +42,7 @@ nav {
    padding-top: 100px;
    position: static;
    align-items: center;
-   margin-left: 30px;
+   margin-left: 20px;
    flex-direction:column;
    background-color: rgb(240, 186, 36);
 }
@@ -50,14 +50,23 @@ nav {
 /* suggested text */
 .sugest{
    display: flex;
-   padding-left: 45px;
+   padding-top: 30px;
+   padding-left: 30px;
    justify-content: center;
 }
+
 #asidecards{
   justify-content: centers;
 }
 
 
+#rightCard{
+   display: flex;
+   justify-content: space-between;
+   justify-items: center;
+   margin-top: 10px;
+}
+/* main body */
 main{
    width: 100vw;
 }
@@ -65,7 +74,7 @@ main{
 /* the card on the right hand side */
 #pcards{
    margin-top: -25px;
-   padding-right: 90px;
+   padding-right: 30px;
    background-color:rgb(240, 186, 36);
 }
 
@@ -80,6 +89,9 @@ main{
 .follow{
 border-width: 0;
 justify-items: center;
+margin-top: 5px;
+margin-left: 5px;
+height: 30px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 background-color: rgb(240, 186, 36);
 border-radius: 5px;
