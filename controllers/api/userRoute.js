@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
       ]
     });
     if (!userData) {
-      res.status(404).json({ status: `error`, message: `No category found with that id.` });
+      res.status(404).json({ status: `error`, message: `No user found with that id.` });
       return;
     }
     res.status(200).json({ status: `success`, result: userData });

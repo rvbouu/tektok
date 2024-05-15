@@ -1,15 +1,15 @@
-*{
+* {
    box-sizing: border-box;
    margin: 0;
    margin-top: 0;
- }
- 
+}
+
 body {
    background-color: rgb(221, 230, 244);
 }
 
 header {
-   background-color:rgb(81, 92, 104);
+   background-color: rgb(81, 92, 104);
    color: antiquewhite;
    text-decoration: none;
    font-size: 20px;
@@ -20,6 +20,10 @@ header {
    display: flex;
    height: 100px;
    width: 160px;
+}
+
+#nowrap{
+   flex-wrap: nowrap;
 }
 
 nav {
@@ -35,66 +39,87 @@ nav {
    margin-right: 20px;
 }
 
+.no-button {
+   background: none;
+   border: none;
+   padding: 0;
+   cursor: pointer;
+   color: antiquewhite;
+   text-decoration: none;
+   font-size: 100%;
+}
+
+.no-button:hover {
+   color:rgb(240, 186, 36);
+   text-decoration: underline;
+}
+
 /* joke container */
-#jokeBox{
+#jokeBox {
    display: flex;
-   margin-top: -25px;
+   margin-top: -52px;
    padding-top: 100px;
    position: static;
    align-items: center;
    margin-left: 20px;
-   flex-direction:column;
+   flex-direction: column;
    background-color: rgb(240, 186, 36);
 }
 
+.postdate{
+   font-size: 12px;
+   color:rgb(81, 92, 104)
+}
+
 /* suggested text */
-.sugest{
+.sugest {
    display: flex;
    padding-top: 30px;
    padding-left: 30px;
    justify-content: center;
 }
 
-#asidecards{
-  justify-content: centers;
+#asidecards {
+   justify-content: centers;
 }
 
 
-#rightCard{
+#rightCard {
    display: flex;
    justify-content: space-between;
    justify-items: center;
    margin-top: 10px;
 }
+
 /* main body */
-main{
+main {
    width: 100vw;
 }
 
 /* the card on the right hand side */
-#pcards{
-   margin-top: -25px;
+#pcards {
+   margin-top: -52px;
    padding-right: 30px;
-   background-color:rgb(240, 186, 36);
+   background-color: rgb(240, 186, 36);
 }
 
 /* profile pic decor */
-.profile-pic{
+.profile-pic {
    border-radius: 50%;
    width: 40px;
    height: 40px;
 }
 
 /* follow button */
-.follow{
-border-width: 0;
-justify-items: center;
-margin-top: 5px;
-margin-left: 5px;
-height: 30px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-background-color: rgb(240, 186, 36);
-border-radius: 5px;
+.follow {
+   border-width: 0;
+   justify-items: center;
+   margin-top: 5px;
+   margin-left: 5px;
+   height: 30px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   background-color: rgb(240, 186, 36);
+   border-radius: 5px;
 }
 
 /* cardtext label on the right */
@@ -104,7 +129,7 @@ border-radius: 5px;
 }
 
 /* follow card */
-#rightCard{
+#rightCard {
    padding-right: 50px;
 }
 
@@ -118,87 +143,95 @@ border-radius: 5px;
 }
 
 /*  label for the title text on the footer bar */
-.label{
+.label {
    display: flex;
    padding-top: 40px;
 }
+
 /* label for the entire text in footer */
-#label{
+#label {
    padding-bottom: 40px;
 }
 
 /* footer tektok text */
-#tektok{
+#tektok {
    display: flex;
    justify-items: center;
    margin-top: 100px
 }
+
 /* resourse page */
-.container2{
+.container2 {
    display: flex;
-   background-color:  rgb(240, 186, 36) ;
+   background-color: rgb(240, 186, 36);
    gap: 10px;
    width: 100%;
- }
+}
 
- .cardR1{
+.cardR1 {
    display: flex;
    color: aliceblue;
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   padding-top:20px;
+   padding-top: 20px;
    border-radius: 10px;
-   background-color: rgb(221, 230, 244) ;
- }
- .cardR2{
+   background-color: rgb(221, 230, 244);
+}
+
+.cardR2 {
    display: flex;
    color: aliceblue;
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   padding-top:20px;
+   padding-top: 20px;
    border-radius: 10px;
-   background-color: rgb(221, 230, 244) ;
- }
- .cardR3{
+   background-color: rgb(221, 230, 244);
+}
+
+.cardR3 {
    display: flex;
    color: aliceblue;
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   padding-top:20px;
+   padding-top: 20px;
    border-radius: 10px;
-   background-color: rgb(221, 230, 244) ;
- }
- .cardR4{
+   background-color: rgb(221, 230, 244);
+}
+
+.cardR4 {
    display: flex;
    color: aliceblue;
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   padding-top:20px;
+   padding-top: 20px;
    border-radius: 10px;
-   background-color: rgb(221, 230, 244) ;
- }
- .cardR5{
+   background-color: rgb(221, 230, 244);
+}
+
+.cardR5 {
    display: flex;
    color: rgb(14, 103, 182);
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   padding-top:20px;
+   padding-top: 20px;
    border-radius: 10px;
-   background-color: rgb(221, 230, 244) ;
- }
- .cardR6{
+   background-color: rgb(221, 230, 244);
+}
+
+.cardR6 {
    display: flex;
    color: black;
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   padding-top:20px;
+   padding-top: 20px;
    border-radius: 10px;
+
   
  }
 
@@ -220,3 +253,5 @@ border-radius: 5px;
 
 
 
+
+}

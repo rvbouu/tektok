@@ -1,9 +1,20 @@
-<aside id ="jokeBox"class="jokes col-2">
-  <h3>Coding Joke of the Day</h3>
-  <p>{{{get_joke}}}</p>
-</aside>
-<div>
-
+<div class="justify-space-between mt-5 row" id="nowrap">
+  <aside id="jokeBox" class="jokes col-3">
+    <h3>Coding Joke of the Day</h3>
+    {{{get_joke}}}
+  </aside>
+  <section class="post-area col-7">
+    {{#each posts as |post|}}
+    <div class="card m-0 border-0 shadow-sm" style="background-color: #F5F5F5; border-radius: 10px; border-color:grey">
+      <div class="card-body">
+        <a href="/profile/{{user.id}}" class="other-user">
+          <h5 class="card-title user user-info">
+            <img src="{{user.profile_pic}}" alt="profile pic" class="profile-pic" />{{user.username}}
+          </h5>
+        </a>
+        <p class="card-text">{{content}}</p>
+        <p class="postdate">{{date_created}}</p>
+      </div>
 </div>
 <section class="post-area col-md-7">
   <form >
@@ -19,28 +30,43 @@
       </h5>
       </a>
       <p class="card-text">{{content}}</p>
-      
     </div>
-  </div>
-  {{/each}}
-</section>
+    {{/each}}
+  </section>
 
+  {{#if logged_in}}
+  <aside id="pcards" class="suggested col-2">
+    <h3 class="sugest">Suggested Users</h3>
+    {{#each users as |user|}}
 
-<aside id ="pcards" styleclass="suggested col-md-4">
-  <h3 class="sugest">Suggested Users</h3>
-  {{#each users as |user|}}
-
-  <div class="card m-3 border-0 shadow-sm" style="background-color: #F5F5F5; border-radius: 10px;  border-color:rgb(221, 230, 244)grey">
-    <div id="rightCard" class="card-body">
-      <a href="/profile/{{user.id}}" class="other-user" id="cardrow">
-      <h5 class="card-title user">
-        <img src="{{profile_pic}}" alt="profile pic" class="profile-pic">{{username}}
-      </h5>
-      </a>
-      <button type="button" class="follow" id="{{id}}">Follow</button>
+    <div class="card m-3 border-0 shadow-sm"
+      style="background-color: #F5F5F5; border-radius: 10px;  border-color:rgb(221, 230, 244)grey">
+      <div id="rightCard" class="card-body">
+        <a href="/profile/{{user.id}}" class="other-user" id="cardrow">
+          <h5 class="card-title user">
+            <img src="{{profile_pic}}" alt="profile pic" class="profile-pic">{{username}}
+          </h5>
+        </a>
+        <button type="button" class="follow" id="{{id}}">Follow</button>
+      </div>
     </div>
-  </div>
-  {{/each}}  
-</aside>
+    {{/each}}
+    {{#each following as |followed|}}
+
+    <div class="card m-3 border-0 shadow-sm"
+      style="background-color: #F5F5F5; border-radius: 10px;  border-color:rgb(221, 230, 244)grey">
+      <div id="rightCard" class="card-body">
+        <a href="/profile/{{id}}" class="other-user" id="cardrow">
+          <h5 class="card-title user">
+            <img src="{{profile_pic}}" alt="profile pic" class="profile-pic">{{username}}
+          </h5>
+        </a>
+        <button type="button" class="bg-info follow" id="{{id}}">Unfollow</button>
+      </div>
+    </div>
+    {{/each}}
+  </aside>
+  {{/if}}
+</div>
 <script src="/js/follow.js"></script>
 <script src="/js/add-post.js"></script>
