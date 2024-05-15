@@ -4,12 +4,15 @@
     {{{get_joke}}}
   </aside>
   <section class="post-area col-6">
+    {{#if logged_in}}
     <form class="form query-form m-3 p-3 text-center shadow-sm">
       <label for="queries" class="queries mb-1">Make A Query</label>
       <textarea class="card p-1 col-12" class="form-input" type="text" placeholder="What's on your mind?"
         id="queries"></textarea>
       <button type="submit" class="submitBtn mt-2">Submit</button>
     </form>
+  {{/if}}
+
     {{#each posts as |post|}}
     <div class="card shadow-sm m-3" style="background-color: #F5F5F5; border-radius: 10px; border-color:grey">
       <div class="card-body">
