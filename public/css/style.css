@@ -86,7 +86,10 @@ ul.nav-list {
    display: flex;
    text-decoration: none;
    color: antiquewhite;
-   margin-right: 20px;
+}
+
+.footer-a{
+   font-size: 1rem;
 }
 
 .no-button {
