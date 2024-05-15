@@ -134,81 +134,137 @@ border-radius: 5px;
    margin-top: 100px
 }
 /* resourse page */
-.container2{
+.container2 {
    display: flex;
-   background-color:  rgb(240, 186, 36) ;
-   gap: 10px;
+   margin-top: -26px;
+   flex-wrap: wrap; 
+   justify-content: center;
+   padding: 20px;
+   background-color: rgb(240, 186, 36);
+   gap: 15px;
    width: 100%;
  }
 
  .cardR1{
-   display: flex;
-   color: aliceblue;
+   /* display: flex; */
+   color: black;
+   height: 400px;
    flex-direction: column;
-   align-items: center;
    justify-content: center;
-   padding-top:20px;
+   /* padding-top:20px; */
    border-radius: 10px;
    background-color: rgb(221, 230, 244) ;
  }
+ 
  .cardR2{
-   display: flex;
-   color: aliceblue;
+   color:black;
+   height: 400px;
    flex-direction: column;
-   align-items: center;
    justify-content: center;
-   padding-top:20px;
+   /* padding-top:20px; */
    border-radius: 10px;
    background-color: rgb(221, 230, 244) ;
  }
  .cardR3{
-   display: flex;
-   color: aliceblue;
+   color:black;
+   height: 400px;
    flex-direction: column;
-   align-items: center;
    justify-content: center;
-   padding-top:20px;
+   /* padding-top:20px; */
    border-radius: 10px;
    background-color: rgb(221, 230, 244) ;
  }
  .cardR4{
-   display: flex;
-   color: aliceblue;
+   color: black;
+   height: 400px;
    flex-direction: column;
-   align-items: center;
    justify-content: center;
-   padding-top:20px;
+   /* padding-top:20px; */
    border-radius: 10px;
    background-color: rgb(221, 230, 244) ;
  }
  .cardR5{
-   display: flex;
-   color: rgb(14, 103, 182);
+   color: black;
+   height: 400px;
    flex-direction: column;
-   align-items: center;
    justify-content: center;
-   padding-top:20px;
+   /* padding-top:20px; */
    border-radius: 10px;
    background-color: rgb(221, 230, 244) ;
  }
  .cardR6{
-   display: flex;
    color: black;
+   height: 400px;
    flex-direction: column;
-   align-items: center;
    justify-content: center;
-   padding-top:20px;
+   /* padding-top:20px; */
    border-radius: 10px;
+   background-color: rgb(221, 230, 244) ;
   
  }
 
+ .sections,
+.sections2,
+.sections3,
+.sections4,
+.sections5,
+.sections6 {
+  flex: 0 0 calc(33.33% - 300px); 
+
+}
+
+.card-title{
+   display: flex;
+   justify-content: center;
+}
 
 
+.cardR1:hover{
+   transition: all 0.3s;
+}
+.cardR2:hover{
+   transition: all 0.3s;
+}
+.cardR3:hover{
+   transition: all 0.3s;
+}
+.cardR4:hover{
+   transition: all 0.3s;
+}
+.cardR5:hover{
+   transition: all 0.3s;
+}
+.cardR6:hover{
+   transition: all 0.3s;
+}
 
 
+.cardR1:hover{
+   transform: scale(1.15);
+}
+.cardR2:hover{
+   transform: scale(1.15);
+}
+.cardR3:hover{
+   transform: scale(1.15);
+}
+.cardR4:hover{
+   transform: scale(1.15);
+}
+.cardR5:hover{
+   transform: scale(1.15);
+}
+.cardR6:hover{
+   transform: scale(1.15);
+}
 
-
-
+.explore{
+   display: flex;
+   justify-content: center;
+   /* padding-right: 1500px; */
+   text-align: center;
+   margin-bottom: 20px;
+ }
 
 
 
