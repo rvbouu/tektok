@@ -47,7 +47,7 @@ const quizQs = [
 ]
 
 let currentQ = 0;
-let score = [];
+let quizScore = [];
 let selectedAns = [];
 const totalQs = quizQs.length;
 
@@ -95,12 +95,12 @@ function loadNextQ() {
   const answerScore = Number(selectedOption.nextElementSibling.getAttribute('data-total'));
 
   ////Add the answer score to the score array
-  score.push(answerScore);
+  quizScore.push(answerScore);
 
   selectedAns.push()
 
 
-  const totalScore = score.reduce((total, currentNum) => total + currentNum);
+  const totalScore = quizScore.reduce((total, currentNum) => total + currentNum);
 
   currentQ++;
 
@@ -138,7 +138,7 @@ function loadPreviousQ() {
 
   currentQ--;
 
-  score.pop();
+  quizScore.pop();
 
   generateQs(currentQ);
 }
@@ -148,7 +148,7 @@ function restartQuiz(e) {
   if(e.target.matches('button')) {
 
   currentQ = 0;
-  score = [];
+  quizScore = [];
 
   location.reload();
   }
