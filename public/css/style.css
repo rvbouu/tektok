@@ -121,6 +121,7 @@ main {
 #pcards {
    margin-top: -52px;
    background-color: rgb(240, 186, 36);
+   width: 100%;
 }
 
 /* profile pic decor */
