@@ -1,35 +1,47 @@
-<h2 class="mb-5 px-3 col-12 text-center">Welcome to {{firstname}}'s page!</h2>
-<aside class="col-4">
-  <h3 class="display-flex justify-center">README.md</h3>
-  <div class="post m-3 p-1">
-    <img src="{{profile_pic}}" alt="profile pic" class="profile-pic" />
-    <p>{{readme}}</p>
-  </div>
-</aside>
-<section class="user-post col-4">
-  <h3 class="display-flex justify-center">Queries Made</h3>
-  {{#each posts as |post|}}
-  <div class="post m-3 p-1">
-    <p>{{content}}</p>
-  </div>
-  {{/each}}
-  <div class="post m-3 p-1">
-</section>
-<section class="row relations justify-space-around col-4">
-  <section id="follower-sect">
-    <h5>Followers</h5>
-    {{#each followers as |user|}}
-    <a href="/profile/{{id}}" class="followers m-3 p-1">
-      <p><img src="{{profile_pic}}" alt="profile-pic" class="profile-pic" />{{username}}</p>
-    </a>
-    {{/each}}
+<div class="align-items-center row">
+  <h1 class="mb-5 px-3 col-12 text-center">Welcome to {{firstname}}'s page!</h1>
+  <aside class="col-4 p-2 user-info">
+    <div class="col-12 prof-pic text-center">
+      <img src="{{profile_pic}}" alt="profile pic" class="profile-pic readme-prof" />
+    </div>
+    <div class="readme-view m-3 p-1">
+      <h3 class="display-flex text-center usertext">README.md</h3>
+
+      <p class="user-scroll">{{readme}}</p>
+    </div>
+  </aside>
+  <section class="queries-made col-4">
+    <h3 class="display-flex text-center usertext">Queries Made</h3>
+    <div class="o-scroll">
+      {{#each posts as |post|}}
+      <div class="upost m-2 p-1">
+        <p>{{content}}</p>
+      </div>
+      {{/each}}
+    </div>
   </section>
-  <section id="following-sect">
-    <h5>Following</h5>
-    {{#each following as |user|}}
-      <a href="/profile/{{id}}" class="followers m-3 p-1">
-        <p><img src="{{profile_pic}}" alt="profile-pic" class="profile-pic" />{{username}}</p>
-      </a>
-    {{/each}}
-  </section>
-</section>
+  <div class="row text-center relations col-4 p-3">
+    <section id="follower-sect" class="col-5 mx-1">
+      <h3 class="display-flex justify-center usertext">Followers</h3>
+      <div class="o-relations">
+        {{#each followers as |user|}}
+        <a href="/profile/{{id}}" class="followers m-3 p-1 row align-items-center">
+          <img src="{{profile_pic}}" alt="profile-pic" class="profile-pic col-6" />
+          <p class="col-6">{{username}}</p>
+        </a>
+        {{/each}}
+      </div>
+    </section>
+    <section id="following-sect" class="col-5 mx-1">
+      <h3 class="display-flex justify-center usertext">Following</h3>
+      <div class="o-relations">
+        {{#each following as |user|}}
+        <a href="/profile/{{id}}" class="followers m-3 p-1 row align-items-center">
+          <img src="{{profile_pic}}" alt="profile-pic" class="profile-pic col-6" />
+          <p class="col-6">{{username}}</p>
+        </a>
+        {{/each}}
+      </div>
+    </section>
+  </div>
+</div>
