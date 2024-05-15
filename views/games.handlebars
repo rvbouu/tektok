@@ -1,7 +1,8 @@
-<section class="quiz p-2">
+<div class="justify-space-between row" id="nowrap">
+<section class="quiz p-2 col-3 display-flex justify-center">
   <div class="quiz-container">
-    <div class="title m-2">Personality Quiz</div>
-    <div id="question" class="question"></div>
+    <h3 class="m-2">Personality Quiz</h3>
+    <p id="question" class="question"></p>
     <div class="flex-column answers p-2">
       <label class="option m-2">
         <input type="radio" name="option" value="1" />
@@ -21,21 +22,26 @@
       </label>
     </div>
     <!-- Buttons -->
-    <div class="controls">
-      <button class="previous">Previous</button>
-      <button class="next">Next</button>
+    <div class="controls display-flex justify-center">
+      <button class="previous m-1 quizbtn">Previous</button>
+      <button class="next m-1 quizbtn">Next</button>
     </div>
+    <div id="quiz-alert"></div>
   </div>
 
   <div class="result">
 
   </div>
 </section>
-<section class="rps">
-  <h4>Coming Soon</h4>
+<section class="breakout">
+  <h4>Breakout</h4>
+
+  <canvas id="myCanvas" width="960" height="640"></canvas>
+  <button id="runButton">Start Game</button>
+  <div id="message"></div>
+
 </section>
-<section class="tictac">
-  <h4>Coming Soon</h4>
-</section>
+</div>
 
 <script src="/js/quiz.js"></script>
+<script src="/js/breakout.js"></script>
