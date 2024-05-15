@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Relations } = require('../../models');
+const { User, Relations, Post } = require('../../models');
 
 // const { pool } = require('../app'); // Import the pool from app.js
 // USING FOR TESTING IN POSTMAN vb - WILL DELETE LATER
@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
       ]
     });
     if (!userData) {
-      res.status(404).json({ status: `error`, message: `No category found with that id.` });
+      res.status(404).json({ status: `error`, message: `No user found with that id.` });
       return;
     }
     res.status(200).json({ status: `success`, result: userData });
@@ -122,5 +122,16 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try{
+    const newPost = await Post.create(req.body);
+    //include: [{ model: Post }]
+    res.status(200).json(newPost)
+  } catch (error){
+    console.error(error);
+    res.status(500).json({ error: 'Failled create your post'})
+  }
+   
+});
 
 module.exports = router;

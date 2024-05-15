@@ -47,7 +47,7 @@ const quizQs = [
 ]
 
 let currentQ = 0;
-let score = [];
+let quizScore = [];
 let selectedAns = [];
 const totalQs = quizQs.length;
 
@@ -61,6 +61,7 @@ const nextButton = document.querySelector('.next');
 const previousButton = document.querySelector('.previous');
 const restartButton = document.querySelector('.restart');
 const result = document.querySelector('.result');
+const alert = document.getElementById('quiz-alert');
 
 function generateQs(i) {
   const q = quizQs[i];
@@ -82,22 +83,24 @@ function generateQs(i) {
 }
 
 function loadNextQ() {
+  alert.innerHTML = '';
   const selectedOption = document.querySelector('input[type="radio"]:checked');
   //Check if there is a radio input checked
   if (!selectedOption) {
-    alert('Please select your answer!');
+    alert.innerHTML = `<p class="text-danger text-center">Please select an answer.</p>`
+    // alert('Please select your answer!');
     return;
   }
   //Get value of selected radio
   const answerScore = Number(selectedOption.nextElementSibling.getAttribute('data-total'));
 
   ////Add the answer score to the score array
-  score.push(answerScore);
+  quizScore.push(answerScore);
 
   selectedAns.push()
 
 
-  const totalScore = score.reduce((total, currentNum) => total + currentNum);
+  const totalScore = quizScore.reduce((total, currentNum) => total + currentNum);
 
   currentQ++;
 
@@ -111,20 +114,20 @@ function loadNextQ() {
     container.style.display = 'none';
     if (totalScore <= 5){
       result.innerHTML =
-      `<h2 class="final-score">Your are Handlebars.js!</h2>
-      <button class="restart">Restart Quiz</button>`
+      `<h2 class="final-score text-center">Your are Handlebars.js!</h2>
+      <button class="restart quizbtn">Restart Quiz</button>`
     } else if(totalScore <= 9){
       result.innerHTML =
-      `<h2 class="final-score">Your are HTML!</h2>
-      <button class="restart">Restart Quiz</button>`
+      `<h2 class="final-score text-center">Your are HTML!</h2>
+      <button class="restart quizbtn">Restart Quiz</button>`
     } else if(totalScore == 10){
       result.innerHTML =
-      `<h2 class="final-score">Your are JavaScript!</h2>
-      <button class="restart">Restart Quiz</button>`
+      `<h2 class="final-score text-center">Your are JavaScript!</h2>
+      <button class="restart quizbtn">Restart Quiz</button>`
     } else if(totalScore >= 11 ){
       result.innerHTML =
-      `<h2 class="final-score">Your are CSS!</h2>
-      <button class="restart">Restart Quiz</button>`
+      `<h2 class="final-score text-center">Your are CSS!</h2>
+      <button class="restart quizbtn">Restart Quiz</button>`
     }
     return;
   }
@@ -135,7 +138,7 @@ function loadPreviousQ() {
 
   currentQ--;
 
-  score.pop();
+  quizScore.pop();
 
   generateQs(currentQ);
 }
@@ -145,7 +148,7 @@ function restartQuiz(e) {
   if(e.target.matches('button')) {
 
   currentQ = 0;
-  score = [];
+  quizScore = [];
 
   location.reload();
   }
