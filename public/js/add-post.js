@@ -4,7 +4,7 @@ submitBtn.addEventListener('click', async function (e) {
   e.preventDefault();
   try{
   const queries = document.getElementById('queries').value;
-
+    
   console.log("click")
   console.log(queries);
 
@@ -19,15 +19,31 @@ submitBtn.addEventListener('click', async function (e) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(postData)
 
+  });
+
+  if (response.ok) {
+    const newPost = await response.json();
+    console.log('New post created:', newPost);
+
+    // You can update your UI here to display the new post without reloading the page
+
+  } else {
+    throw new Error('Network response was not ok.');
   }
-  )
 
   document.location.reload();
+  
+} catch (err) {
+  console.error(err);
 }
-catch (err){
-  throw new Error('Network response was not ok.');
-}
-}
-)
+});
+
+//document.location.reload();
+// }
+// catch (err){
+//   throw new Error('Network response was not ok.');
+// }
+// }
+// )
 
 
