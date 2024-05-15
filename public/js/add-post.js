@@ -45,12 +45,4 @@ submitBtn.addEventListener('click', async function (e) {
   }
 });
 
-//document.location.reload();
-// }
-// catch (err){
-//   throw new Error('Network response was not ok.');
-// }
-// }
-// )
-
 

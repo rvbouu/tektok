@@ -32,6 +32,8 @@ updateBtn.addEventListener('click', async function (e) {
   if (res.ok) {
     emailError.innerHTML = '';
     msg.innerHTML = `<p class="text-info">Updated Successfully!</p>`;
+    document.location.reload();
     return;
   };
+  
 });
