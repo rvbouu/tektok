@@ -22,7 +22,7 @@ header {
    width: 160px;
 }
 
-#nowrap{
+#nowrap {
    flex-wrap: nowrap;
 }
 
@@ -50,7 +50,7 @@ nav {
 }
 
 .no-button:hover {
-   color:rgb(240, 186, 36);
+   color: rgb(240, 186, 36);
    text-decoration: underline;
 }
 
@@ -66,9 +66,9 @@ nav {
    background-color: rgb(240, 186, 36);
 }
 
-.postdate{
+.postdate {
    font-size: 12px;
-   color:rgb(81, 92, 104)
+   color: rgb(81, 92, 104)
 }
 
 /* suggested text */
@@ -232,26 +232,11 @@ main {
    padding-top: 20px;
    border-radius: 10px;
 
-  
- }
 
- /* * {
-   padding: 0;
-   margin: 0;
- } */
- #myCanvas {
+}
+
+#myCanvas {
    background: #eee;
    display: block;
    margin: 0 auto;
- }
-
-
-
-
-
-
-
-
-
-
 }
