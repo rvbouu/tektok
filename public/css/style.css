@@ -1,7 +1,16 @@
+html, body{ 
+   max-width: 100%;
+   overflow-x: hidden !important;
+  } 
+
+  #logout {
+   padding-right: 30px;
+  }
+
 * {
    box-sizing: border-box;
    margin: 0;
-   margin-top: 0;
+   padding: 0;
 }
 
 body {
@@ -13,6 +22,9 @@ header {
    color: antiquewhite;
    text-decoration: none;
    font-size: 20px;
+   width: 100%;
+   padding-right: 100px;
+   block-size: gutter x 0;
 }
 
 /* logo header */
@@ -102,13 +114,12 @@ ul.nav-list {
 
 /* main body */
 main {
-   width: 100vw;
+   width: 100%;
 }
 
 /* the card on the right hand side */
 #pcards {
    margin-top: -52px;
-   padding-right: 30px;
    background-color: rgb(240, 186, 36);
 }
 
@@ -248,10 +259,6 @@ main {
    --animate-duration: 2s;
    --animate-delay: 1s;
  }
-
-
-
-}
 
 #myCanvas {
    background: #eee;
