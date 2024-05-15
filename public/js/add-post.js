@@ -1,9 +1,18 @@
 const submitBtn = document.querySelector('.submitBtn')
+const errorMessage = document.getElementById('errorMessage');
 
 submitBtn.addEventListener('click', async function (e) {
   e.preventDefault();
   try {
     const queries = document.getElementById('queries').value;
+
+    if (queries.trim() === '') {
+      errorMessage.textContent = 'Please enter some content before submitting.';
+      errorMessage.style.display = 'block';
+      return; // Stop further execution
+    }
+
+    errorMessage.style.display = 'none'; // Hide the error message if content is not empty
 
     console.log("click")
     console.log(queries);
