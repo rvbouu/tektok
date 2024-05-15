@@ -2,12 +2,11 @@
   border: 1px grey solid;
   border-radius: 15%;
   background-color: palegoldenrod;
-  margin: 0 0 30px 30px;
+  height: 25rem;
 }
 
 #question{
   font-size: 1.5rem;
-  margin-bottom: 0;
 }
 
 .option{
@@ -23,12 +22,11 @@
   text-decoration: none;
   font-size: 100%;
   width: 100px;
-  height: 25px;
+  height: 40px;
 }
 
 .breakout{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 200px;
 }
