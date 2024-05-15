@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Relations } = require('../../models');
+const { User, Relations, Post } = require('../../models');
 
 // const { pool } = require('../app'); // Import the pool from app.js
 // USING FOR TESTING IN POSTMAN vb - WILL DELETE LATER
@@ -122,5 +122,16 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try{
+    const newPost = await Post.create(req.body);
+    //include: [{ model: Post }]
+    res.status(200).json(newPost)
+  } catch (error){
+    console.error(error);
+    res.status(500).json({ error: 'Failled create your post'})
+  }
+   
+});
 
 module.exports = router;

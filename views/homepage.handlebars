@@ -6,6 +6,10 @@
 
 </div>
 <section class="post-area col-md-7">
+  <form >
+    <textarea class="card m-0 border-0 shadow-sm post-area col-md-12" style="background-color: #F5F5F5; border-radius: 10px; border-color:grey" name="content" placeholder="What's on your mind?" id="queries"></textarea>
+    <button type="submit" class="submitBtn ">Submit</button>
+  </form>
   {{#each posts as |post|}}
   <div class="card m-0 border-0 shadow-sm" style="background-color: #F5F5F5; border-radius: 10px; border-color:grey">
     <div class="card-body">
@@ -39,3 +43,4 @@
   {{/each}}  
 </aside>
 <script src="/js/follow.js"></script>
+<script src="/js/add-post.js"></script>
