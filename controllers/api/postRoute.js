@@ -8,7 +8,6 @@ router.post('/', async (req, res) => {
       ...req.body,
       user_id: req.session.user_id
     });
-    
 
     res.status(200).json(postData);
     
@@ -18,4 +17,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+
+ 
 module.exports = router
