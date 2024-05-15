@@ -28,9 +28,18 @@ header {
 
 nav {
    color: antiquewhite;
-   gap: 10px;
+   gap: 20px;
    display: flex;
+   font-size: 25px;
 }
+
+ul.nav-list {
+   list-style-type: none;
+ }
+ 
+ .nav-item {
+   display: inline;
+ }
 
 .a {
    display: flex;
@@ -231,6 +240,15 @@ main {
    justify-content: center;
    padding-top: 20px;
    border-radius: 10px;
+
+  
+ }
+
+ :root {
+   --animate-duration: 2s;
+   --animate-delay: 1s;
+ }
+
 
 
 }
