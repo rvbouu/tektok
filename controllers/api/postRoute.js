@@ -8,8 +8,13 @@ router.post('/', async (req, res) => {
       ...req.body,
       user_id: req.session.user_id
     });
+    
+    // Retrieve the newly created post along with the user data in descending order based on the post's creation date
+    const posts = await Post.findAll({
+      order: [['date_created', 'ASC']] // Order by date created attribute in descending order
+    });
 
-    res.status(200).json(postData);
+    res.status(200).json(posts);
     
   } catch (error) {
     console.error(error);

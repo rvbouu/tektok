@@ -1,46 +1,50 @@
-<div class="justify-space-between row" id="nowrap">
-<section class="quiz p-2 col-3 display-flex justify-center">
-  <div class="quiz-container">
-    <h3 class="m-2">Personality Quiz</h3>
-    <p id="question" class="question"></p>
-    <div class="flex-column answers p-2">
-      <label class="option m-2">
-        <input type="radio" name="option" value="1" />
-        <span class="opt1"></span>
-      </label>
-      <label class="option m-2">
-        <input type="radio" name="option" value="2" />
-        <span class="opt2"></span>
-      </label>
-      <label class="option m-2">
-        <input type="radio" name="option" value="3" />
-        <span class="opt3"></span>
-      </label>
-      <label class="option m-2">
-        <input type="radio" name="option" value="4" />
-        <span class="opt4"></span>
-      </label>
+<div class="row display-flex align-items-center justify-space-around">
+  <div class="col-6 display-flex text-center container">
+    <div class="row justify-content-center">
+    <section class="quiz p-2 col-8">
+      <div class="quiz-container display-flex align-items-center">
+        <h3 class="m-2">Personality Quiz</h3>
+        <p id="question" class="question"></p>
+        <div class="flex-column align-items-start answers p-2">
+          <label class="option m-2 col-12">
+            <input type="radio" name="option" value="1" />
+            <span class="opt1"></span>
+          </label>
+          <label class="option m-2 col-12">
+            <input type="radio" name="option" value="2" />
+            <span class="opt2"></span>
+          </label>
+          <label class="option m-2 col-12">
+            <input type="radio" name="option" value="3" />
+            <span class="opt3"></span>
+          </label>
+          <label class="option m-2 col-12">
+            <input type="radio" name="option" value="4" />
+            <span class="opt4"></span>
+          </label>
+        </div>
+        <!-- Buttons -->
+        <div class="controls display-flex justify-center">
+          <button class="previous m-1 quizbtn">Previous</button>
+          <button class="next m-1 quizbtn">Next</button>
+        </div>
+        <div id="quiz-alert"></div>
+      </div>
+
+      <div class="result">
+
+      </div>
+    </section>
     </div>
-    <!-- Buttons -->
-    <div class="controls display-flex justify-center">
-      <button class="previous m-1 quizbtn">Previous</button>
-      <button class="next m-1 quizbtn">Next</button>
-    </div>
-    <div id="quiz-alert"></div>
   </div>
+  <section class="breakout col-6">
+    <h4>Breakout</h4>
 
-  <div class="result">
+    <canvas id="myCanvas" width="576" height="384"></canvas>
+    <button id="runButton">Start Game</button>
+    <div id="message"></div>
 
-  </div>
-</section>
-<section class="breakout">
-  <h4>Breakout</h4>
-
-  <canvas id="myCanvas" width="960" height="640"></canvas>
-  <button id="runButton">Start Game</button>
-  <div id="message"></div>
-
-</section>
+  </section>
 </div>
 
 <script src="/js/quiz.js"></script>

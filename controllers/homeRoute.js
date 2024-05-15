@@ -10,7 +10,8 @@ router.get("/", async (req, res) => {
         {
           model: User
         }
-      ]
+      ],
+      order: [['date_created', 'DESC']] // Order by createdAt attribute in descending order
     })
     const userData = await User.findAll()
     
