@@ -2,7 +2,7 @@ const submitBtn = document.querySelector('.submitBtn')
 
 submitBtn.addEventListener('click', async function (e) {
   e.preventDefault();
-
+  try{
   const queries = document.getElementById('queries').value;
 
   console.log("click")
@@ -23,10 +23,10 @@ submitBtn.addEventListener('click', async function (e) {
   )
 
   document.location.reload();
-
-
-
-  //throw new Error('Network response was not ok.');
+}
+catch (err){
+  throw new Error('Network response was not ok.');
+}
 }
 )
 
