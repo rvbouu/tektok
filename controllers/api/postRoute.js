@@ -11,7 +11,6 @@ router.post('/', async (req, res) => {
     
     // Retrieve the newly created post along with the user data in descending order based on the post's creation date
     const posts = await Post.findAll({
-
       order: [['date_created', 'ASC']] // Order by date created attribute in descending order
     });
 
@@ -23,4 +22,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+
+ 
 module.exports = router
