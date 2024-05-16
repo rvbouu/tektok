@@ -1,8 +1,18 @@
 <div id="viewport" class="justify-space-between row">
-  <aside id="jokeBox" class="col-3 p-5">
-    <h3>Coding Joke of the Day</h3>
-    {{{get_joke}}}
-  </aside>
+  <div id="jokeBox" class="col-3 p-5">
+    <aside id="jokeBox" class="col-12">
+      <h3>Coding Joke of the Day</h3>
+      {{{get_joke}}}
+    </aside>
+    {{#if logged_in}}
+    <section class="chatbox mt-5">
+      <h2 class="text-center usertext">Talk the Tok</h2>
+      <aside class="chatroom">
+    
+      </aside>
+    </section>
+    {{/if}}
+  </div>
   <section class="post-area col-6">
     {{#if logged_in}}
     <form class="form query-form m-3 p-3 text-center shadow-sm">
@@ -11,7 +21,7 @@
         id="queries"></textarea>
       <button type="submit" class="submitBtn mt-2">Submit</button>
     </form>
-  {{/if}}
+    {{/if}}
 
     {{#each posts as |post|}}
     <div class="card shadow-sm m-3" style="background-color: #F5F5F5; border-radius: 10px; border-color:grey">

@@ -6,6 +6,7 @@ const exphbs = require('express-handlebars');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const helpers = require('./lib/helpers');
+const { Server } = require('socket.io');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -34,6 +35,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ alter: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening, Visit http://localhost:${PORT}`));
 });
