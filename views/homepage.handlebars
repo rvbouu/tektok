@@ -1,8 +1,11 @@
 <div class="justify-space-between row">
-  <aside id="jokeBox" class="col-3 p-5">
+   <div id="jokes-container"></div>
+ <aside id="jokeBox" class="col-3 p-5">
     <h3>Coding Joke of the Day</h3>
     {{{get_joke}}}
+    <div class="answer"></div>
   </aside>
+  
   <section class="post-area col-6">
     <form class="form query-form m-3 p-3 text-center shadow-sm">
       <label for="queries" class="queries mb-1">Make A Query</label>
@@ -58,3 +61,4 @@
 </div>
 <script src="/js/follow.js"></script>
 <script src="/js/add-post.js"></script>
+<script src="/js/codingjoke.js"></script>
