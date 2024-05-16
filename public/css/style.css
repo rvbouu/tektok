@@ -533,6 +533,8 @@ main {
    border-radius: 10px;
    height: 40rem;
    width: 20rem;
+   background-color: rgb(240, 214, 139);
+   overflow: hidden;
 }
 
 #chatform{
@@ -545,6 +547,7 @@ main {
    height:30rem;
    list-style-type: none;
    padding: 0;
+   overflow: scroll;
 }
 
 #messages li {
@@ -560,16 +563,18 @@ main {
 }
 
 #sendButton,
-#apiButton {
+#apiButton, #btn {
    font-size: 0.9rem;
+   text-wrap: nowrap;
    background: grey;
    border: none;
    padding: 0;
    cursor: pointer;
    color: antiquewhite;
    text-decoration: none;
-   width: 100px;
+   width: 120px;
    height: 25px;
+   margin-bottom: 5px;
 }
 
 

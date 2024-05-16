@@ -73,7 +73,9 @@
   {{/if}}
 </div>
 <script src="/js/follow.js"></script>
-<script src="/js/add-post.js"></script>
 <script src="/js/codingjoke.js"></script>
+{{#if logged_in}}
+<script src="/js/add-post.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/socket.js"></script>
+{{/if}}
