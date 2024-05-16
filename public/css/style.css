@@ -88,6 +88,11 @@ ul.nav-list {
    color: antiquewhite;
 }
 
+a{
+   text-decoration: none;
+   color: darkslategrey;
+}
+
 .footer-a{
    font-size: 1rem;
 }
@@ -167,11 +172,6 @@ main {
 .user {
    display: flex;
    align-items: center;
-}
-
-/* follow card */
-#rightCard {
-   padding-right: 50px;
 }
 
 /* footer */
@@ -433,7 +433,7 @@ main {
    border-bottom: 1px grey solid;
 }
 
-.update-form{
+.update-form, .login-form{
    background-color: #f5f5f5;
    border: 1px grey solid;
    border-radius: 10px;
@@ -474,10 +474,6 @@ main {
    height: 200px;
 }
 
-.opost{
-   background-color: #f5f5f5;
-}
-
 .o-scroll{
    max-height: 400px;
    overflow-y: auto;
@@ -486,4 +482,25 @@ main {
 .o-relations{
    max-height: 400px;
    overflow-y: auto;
+}
+
+/* login page */
+.signup-form{
+   background-color: #f5f5f5;
+   border: 1px grey solid;
+   border-radius: 10px;
+   height: 25rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.loginpage{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+.lform-input{
+   height: 2rem;
 }

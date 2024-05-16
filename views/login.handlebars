@@ -1,50 +1,50 @@
-<div id="login" class="col-md-5 mx-1">
-  <h2>Login to Tek Tok</h2>
+<div class="display-flex align-items-center row loginpage mt-5">
+  <div id="login" class="col-md-5 mx-1">
 
-  <form class="form login-form" id="signup-form">
-    <div class="form-group">
-      <label for="user-name">Username:</label>
-      <input class="form-input" type="text" id="username-login" required><br><br>
-    </div>
+    <form class="form login-form text-center" id="login-form">
+    <h2 class="text-center">Login to Tek Tok</h2>
+      <div class="form-group">
+        <label for="user-name" class="col-4 text-end utext">Username:</label>
+        <input class="lform-input col-6" type="text" id="username-login" required><br><br>
+      </div>
 
-    <div class="form-group">
-      <label for="password-login">Password:</label>
-      <input class="form-input" type="password" id="password-login" required><br><br>
-    </div>
-    <div class="form-group">
-      <button class="btn btn-primary" type="submit">Login</button>
-    </div>
-  </form>
+      <div class="form-group">
+        <label for="password-login" class="col-4 text-end utext">Password:</label>
+        <input class="lform-input col-6" type="password" id="password-login" required><br><br>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-warning text-center" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-5">
+    <form class="form signup-form text-center" id="signup-form">
+    <h2 class="text-center">Never been here? Sign up for Tek Tok!</h2>
+      <div class="form-group">
+        <label for="fname-signup" class="col-4 text-end utext">First name:</label>
+        <input class="lform-input col-6" type="text" id="fname-signup" required><br><br>
+      </div>
+      <div class="form-group" class="col-4 text-end utext">
+        <label for="lname-signup" class="col-4 text-end utext">Last name:</label>
+        <input class="lform-input col-6" type="text" id="lname-signup" required><br><br>
+      </div>
+      <div class="form-group">
+        <label for="username-signup" class="col-4 text-end utext">Username:</label>
+        <input class="lform-input col-6" type="text" id="username-signup" required><br><br>
+      </div>
+      <div class="form-group">
+        <label for="email-signup" class="col-4 text-end utext">Email:</label>
+        <input class="lform-input col-6" type="text" id="email-signup" required><br><br>
+      </div>
+      <div class="form-group">
+        <label for="password-signup" class="col-4 text-end utext">Password:</label>
+        <input class="lform-input col-6" type="password" id="password-signup" required><br><br>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-warning" type="submit">Sign Up!</button>
+      </div>
+    </form>
+  </div>
 </div>
-
-<div class="col-md-5">
-  <h2>Never been here? Sign up for Tek Tok!</h2>
-
-  <form class="form signup-form" id="signup-form">
-    <div class="form-group">
-      <label for="fname-signup">First name:</label>
-      <input class="form-input" type="text" id="fname-signup" required><br><br>
-    </div>
-    <div class="form-group">
-      <label for="lname-signup">Last name:</label>
-      <input class="form-input" type="text" id="lname-signup" required><br><br>
-    </div>
-    <div class="form-group">
-      <label for="username-signup">Username:</label>
-      <input class="form-input" type="text" id="username-signup" required><br><br>
-    </div>
-    <div class="form-group">
-      <label for="email-signup">Email:</label>
-      <input class="form-input" type="text" id="email-signup" required><br><br>
-    </div>
-    <div class="form-group">
-      <label for="password-signup">Password:</label>
-      <input class="form-input" type="password" id="password-signup" required><br><br>
-    </div>
-    <div class="form-group">
-      <button class="btn btn-primary" type="submit">Sign Up!</button>
-    </div>
-  </form>
-</div>
-
 <script src="/js/login.js"></script>
