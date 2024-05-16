@@ -11,7 +11,6 @@ const socket = io();
     const li = document.createElement('li');
     li.textContent = msg;
     messages.appendChild(li);
-    window.scrollTo(0, document.body.scrollHeight);
   });
 
   // Send message on button click
