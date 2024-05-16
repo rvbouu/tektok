@@ -14,6 +14,7 @@ submitBtn.addEventListener('click', async function (e) {
 
     errorMessage.style.display = 'none'; // Hide the error message if content is not empty
 
+
     console.log("click")
     console.log(queries);
 
@@ -38,7 +39,7 @@ submitBtn.addEventListener('click', async function (e) {
       throw new Error('Network response was not ok.');
     }
 
-    document.location.reload();
+   document.location.reload();
 
   } catch (err) {
     console.error(err);

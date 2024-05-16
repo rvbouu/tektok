@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const { Post, User, Relations } = require("../models")
 const withAuth = require("../lib/auth");
+const { linkify } = require("../lib/helpers")
+
 
 // get route findall posts
 router.get("/", async (req, res) => {
@@ -15,7 +17,10 @@ router.get("/", async (req, res) => {
     })
     const userData = await User.findAll()
     
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const posts = postData.map((post) => {
+      const serial = post.get({ plain: true })
+      return { ...serial, content: linkify(serial.content) }
+    });
     
     if (req.session.logged_in) {
       const singleUserData = await User.findByPk(req.session.user_id, {
