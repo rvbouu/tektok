@@ -32,28 +32,28 @@
       <nav class="display-flex col-8 align-items-center justify-content-end">
         {{!-- <div class="animate__animated animate__fadeInRight"> --}}
           <div>
-            <ul class="row justify-content-between nav-list">
+            <ul  class="row justify-content-between nav-list">
               <li class="col-1 nav-item animate__animated animate__fadeInRightBig">
-                <a href="/" class="a">Home</a>
+                <a id="homenav" href="/" class="a">Home</a>
               </li>
               <li class="col-3 nav-item animate__animated animate__fadeInRightBig">
-                <a href="/resources" class="a">Resources</a>
+                <a id="homenav" href="/resources" class="a">Resources</a>
               </li>
               <li class="col-1 nav-item animate__animated animate__fadeInRightBig">
-                <a href="/games" class="a">Games</a>
+                <a id="homenav" href="/games" class="a">Games</a>
               </li>
               <li class="col-2 mx-3 nav-item animate__animated animate__fadeInRightBig">
-                <a href="/profile" class="a">Profile</a>
+                <a id="homenav" href="/profile" class="a">Profile</a>
               </li>
 
               {{#if logged_in}}
               <li class="col-1 animate__animated animate__fadeInRightBig">
-                <button class="no-button" id="logout">Logout</button>
+                <button id="homenav" class="no-button" id="logout">Logout</button>
               </li>
               {{else}}
               <!-- else -->
               <li class="col-1 animate__animated animate__fadeInRightBig">
-                <a href="/login" class="a">Login</a>
+                <a id="homenav" href="/login" class="a">Login</a>
               </li>
               {{/if}}
               <!-- end if -->
