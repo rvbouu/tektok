@@ -534,3 +534,64 @@ main {
    height: 40rem;
    width: 20rem;
 }
+
+
+
+
+
+ /* homepage */
+ @media screen and (max-width: 600px)
+  {
+   header, .footer{
+    background-color: rgb(44, 50, 56);
+   }
+   #homenav{
+      font-size: 20px;
+      justify-content:space-evenly;
+   }
+   .mediabreak{
+      word-wrap: break-word;
+      flex-wrap: wrap;
+   }
+   .card-body{
+      float: none;
+      width: 100%;
+
+   }
+   
+ }
+
+ @media screen and (max-width:768px)
+ {
+ }
+
+@media screen and (max-width: 992px) 
+{
+#homenav{
+   font-size: 25px;
+   justify-content:space-evenly;
+   }
+.card-body{
+   flex-direction: column;
+   justify-content: center;
+}
+#card-body{
+   flex-direction: column;
+   justify-content: center;
+}
+   header, .footer{
+    background-color: rgb(63, 71, 80);
+   }
+   button{
+      width: 100%;
+   }
+   #jokebox, #pcards{
+      background-color:rgb(213, 166, 36);
+   }
+}
+
+   
+ 
+
+
+ 
