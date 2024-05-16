@@ -88,7 +88,9 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login', {
+    style: 'footer.css'
+  });
 });
 
 
@@ -104,7 +106,8 @@ router.get('/games', withAuth, async (req, res) => {
 
     res.render('games', {
       ...user,
-      logged_in: true
+      logged_in: true,
+      style: 'footer.css'
     });
   } catch (err) {
     console.log(err);
@@ -150,7 +153,8 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
+      style: 'footer.css'
     });
   } catch (err) {
     console.log(err)
@@ -187,7 +191,8 @@ router.get('/profile/:id', withAuth, async (req, res) => {
 
     res.render('otherprofiles', {
       ...user,
-      logged_in: true
+      logged_in: true,
+      style: 'footer.css'
     });
   } catch (err) {
     console.log(err)
@@ -195,25 +200,29 @@ router.get('/profile/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login',async (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
 
-  res.render('login');
+  res.render('login', {
+    style: 'footer.css'
+  });
 });
 
 router.get('/comingsoon', async (req, res) => {
   res.render('comingsoon', {
-    logged_in: req.session.logged_in
+    logged_in: req.session.logged_in,
+    style: 'footer.css'
   })
 });
 
 router.get('/aboutus', async (req, res) => {
   res.render('aboutus', {
-    logged_in: req.session.logged_in
+    logged_in: req.session.logged_in,
+    style: 'footer.css'
   })
 })
 

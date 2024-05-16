@@ -16,32 +16,33 @@
   <link rel="stylesheet" href="/css/jass.css"> --}}
   <link rel="stylesheet" href="/css/quiz.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/{{style}}">
   <link rel="icon" href="/assets/apple-icon-180x180.png" />
   <title>Tek Tok</title>
 </head>
 
-<body>
+<body id="bottom">
   <div class="justify-space-between">
-    <header class="row display-flex justify-space-between p-2">
+    <header class="row p-2">
 
-      <div class="col-7 animate__animated animate__fadeInRightBig">
+      <div class="col-3 animate__animated animate__fadeInRightBig">
         <object id="svg1" data="/assets/tektokyellowtext.svg" type="image/svg+xml" width="100" height="100"></object>
       </div>
 
-      <nav class="display-flex col-5 align-items-center">
+      <nav class="display-flex col-8 align-items-center justify-content-end">
         {{!-- <div class="animate__animated animate__fadeInRight"> --}}
           <div>
             <ul class="row justify-content-between nav-list">
               <li class="col-1 nav-item animate__animated animate__fadeInRightBig">
                 <a href="/" class="a">Home</a>
               </li>
-              <li class="col-2 mx-2 nav-item animate__animated animate__fadeInRightBig">
+              <li class="col-3 nav-item animate__animated animate__fadeInRightBig">
                 <a href="/resources" class="a">Resources</a>
               </li>
               <li class="col-1 nav-item animate__animated animate__fadeInRightBig">
                 <a href="/games" class="a">Games</a>
               </li>
-              <li class="col-2 mx-2 nav-item animate__animated animate__fadeInRightBig">
+              <li class="col-2 mx-3 nav-item animate__animated animate__fadeInRightBig">
                 <a href="/profile" class="a">Profile</a>
               </li>
 
@@ -67,37 +68,37 @@
     <main class="justify-space-between row">
       {{{body}}}
     </main>
-    <footer class="footer display-flex justify-space-between align-center">
+    <footer id="bottom" class="footer display-flex justify-space-between align-center">
       <div class="container">
         <div class="col">
           <nav>
             <aside id="label" class="col-3">
               <h4 class="label">Learn</h4>
-              <a href="https://www.w3schools.com/css/default.asp" target="_blank" class="a">CSS</a>
+              <a href="https://www.w3schools.com/css/default.asp" target="_blank" class="a footer-a">CSS</a>
               <br />
-              <a href="https://www.w3schools.com/html/" target="_blank" class="a">HTML</a>
+              <a href="https://www.w3schools.com/html/" target="_blank" class="a footer-a">HTML</a>
               <br />
-              <a href="https://www.w3schools.com/js/default.asp" target="_blank" class="a">Javascript</a>
+              <a href="https://www.w3schools.com/js/default.asp" target="_blank" class="a footer-a">Javascript</a>
               <br />
-              <a href="https://react.dev/" target="_blank" class="a">React</a>
+              <a href="https://react.dev/" target="_blank" class="a footer-a">React</a>
             </aside>
             <aside id="label" class="col-3">
               <h4 class="label">About Tek Tok</h4>
-              <a href="/aboutus" class="a">Back Story</a>
+              <a href="/aboutus" class="a footer-a">Back Story</a>
               <br />
-              <a href="/comingsoon" class="a">Hiring</a>
+              <a href="/comingsoon" class="a footer-a">Hiring</a>
               <br />
-              <a href="/comingsoon" class="a">Engagemnt</a>
+              <a href="/comingsoon" class="a footer-a">Engagemnt</a>
             </aside>
             <aside id="label" class="col-3">
               <h4 class="label">Partner With Us</h4>
-              <a href="/comingsoon" class="a">Partners</a>
+              <a href="/comingsoon" class="a footer-a">Partners</a>
               <br />
-              <a href="/comingsoon" class="a">Branding Guidelines</a>
+              <a href="/comingsoon" class="a footer-a">Branding Guidelines</a>
               <br />
-              <a href="/comingsoon" class="a">Explore Internships</a>
+              <a href="/comingsoon" class="a footer-a">Explore Internships</a>
               <br />
-              <a href="/comingsoon" class="a">Testimonials</a>              
+              <a href="/comingsoon" class="a footer-a">Testimonials</a>              
             </aside>
             <aside id="label" class="col-3">
               <img src="/assets/4.png" alt="logo">
