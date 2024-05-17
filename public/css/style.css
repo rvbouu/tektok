@@ -187,6 +187,7 @@ main {
 .footer {
    bottom: 0;
    width: 100%;
+   /* height: 15rem; */
    background-color: rgb(81, 92, 104);
    color: antiquewhite;
 }
@@ -577,15 +578,72 @@ main {
    margin-bottom: 5px;
 }
 
+/* chat feature */
+.chatroom {
+   margin: 0;
+   padding-bottom: 3rem;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
+.chatbox {
+   border: 1px grey solid;
+   border-radius: 10px;
+   height: 40rem;
+   width: 20rem;
+   background-color: rgb(240, 214, 139);
+   overflow: hidden;
+}
 
+#chatform{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+#messages {
+   height:30rem;
+   list-style-type: none;
+   padding: 0;
+   overflow: scroll;
+}
+
+#messages li {
+   padding: 8px;
+   margin-bottom: 10px;
+   background: #f4f4f4;
+   border-radius: 4px;
+}
+
+#messageInput {
+   padding: 10px;
+   width: 80%;
+}
+
+#sendButton,
+#apiButton, #btn {
+   font-size: 0.9rem;
+   text-wrap: nowrap;
+   background: grey;
+   border: none;
+   padding: 0;
+   cursor: pointer;
+   color: antiquewhite;
+   text-decoration: none;
+   width: 120px;
+   height: 25px;
+   margin-bottom: 5px;
+}
+
+.footerlogo{
+   margin-top: 80px;
+}
 
 
 /* homepage */
 @media screen and (max-width: 600px) {
 
    header,
-   .footer {
+   footer {
       background-color: rgb(44, 50, 56);
    }
 
@@ -595,8 +653,9 @@ main {
    }
 
    .mediabreak {
-      word-wrap: break-word;
-      flex-wrap: wrap;
+      flex-direction: column;
+       word-wrap: break-word;
+      /* flex-wrap: wrap;  */
    }
 
    .card-body {
@@ -604,10 +663,21 @@ main {
       width: 100%;
 
    }
+   
+ }
 
-}
+ @media screen and (min-heigth:935px)
+ {
+   body#bottom {
+      position: relative;
+      min-height: 100vh;
+    }
+    
+    footer#bottom {
+      position: absolute;
+    }
+ }
 
-@media screen and (max-width:768px) {}
 
 @media screen and (max-width: 992px) {
    #homenav {
@@ -639,3 +709,41 @@ main {
       background-color: rgb(213, 166, 36);
    }
 }
+
+
+
+/* resorces */
+@media screen and (max-width:935px)
+{
+    body#bottom {
+     position: fixed;
+     min-height: 100vh;
+   } 
+   body{
+      flex-direction: column;
+      flex-wrap: wrap;
+   }
+}
+
+
+
+/* game page */
+@media screen and (max-width: 984px){
+ 
+   #myCanvas{
+      flex-direction: column;
+      
+   }
+   
+}
+
+/* profile */
+@media screen and (max-width: 984px)
+{
+      #profile{
+         flex-direction: column;
+         background-color:rgb(213, 166, 36);
+      }
+     
+}
+   
