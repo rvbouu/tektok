@@ -5,12 +5,12 @@ const loginFormHandler = async (event) => {
   const username = document.getElementById('username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
   const errorMessageElement = document.querySelector('.errorMsgEl');
-
+  console.log('line8')
   if (!username || !password) {
     errorMessageElement.textContent = 'Please enter both username and password.';
     return; // Stop further execution if fields are empty
   }
-
+  console.log('b4 fetch')
   // Send a POST request to the API endpoint
   const response = await fetch('/api/users/login', {
     method: 'POST',
