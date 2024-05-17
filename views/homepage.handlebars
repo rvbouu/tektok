@@ -1,10 +1,20 @@
 <div id="viewport" class="justify-space-between row">
-  <aside id="jokeBox" class="col-3 p-5">
-    <h3 class="mediabreak">Coding Joke of the Day</h3>
-    {{{get_joke}}}
-    <div class="answer"></div>
-  </aside>
-  
+  <div id="jokeBox" class="col-3 p-5">
+    <aside id="jokeBox" class="col-12">
+      <h3 class="mediabreak">Coding Joke of the Day</h3>
+      {{{get_joke}}}
+      <div class="answer"></div>
+    </aside>
+    {{#if logged_in}}
+    <section class="chatbox mt-5">
+      <h2 class="text-center usertext">Talk the Tok</h2>
+      <aside class="chatroom">
+        {{>homepage-details}}
+      </aside>
+    </section>
+    {{/if}}
+  </div>
+
   <section class="post-area col-6">
     {{#if logged_in}}
     <form class="form query-form m-3 p-3 text-center shadow-sm">
@@ -14,11 +24,11 @@
       <button type="submit" class="submitBtn mt-2">Submit</button>
       <div id="errorMessage" style="color: red; display: none;"></div>
     </form>
-  {{/if}}
+    {{/if}}
 
     {{#each posts as |post|}}
     <div class="card shadow-sm m-3" style="background-color: #F5F5F5; border-radius: 10px; border-color:grey">
-      <div class="card-body">
+      <div class="card-body singlePost">
         <a href="/profile/{{user.id}}" class="other-user row">
           <img src="{{user.profile_pic}}" alt="profile pic" class="profile-pic col-2" />
           <h5 class="user user-info col-3 mx-2">{{user.username}}</h5>
@@ -63,5 +73,9 @@
   {{/if}}
 </div>
 <script src="/js/follow.js"></script>
-<script src="/js/add-post.js"></script>
 <script src="/js/codingjoke.js"></script>
+{{#if logged_in}}
+<script src="/js/add-post.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/socket.js"></script>
+{{/if}}

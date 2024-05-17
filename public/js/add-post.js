@@ -5,7 +5,7 @@ submitBtn.addEventListener('click', async function (e) {
   e.preventDefault();
   try {
     let queries = document.getElementById('queries').value;
-   
+
     if (queries.trim() === '') {
       errorMessage.textContent = 'Please enter some content before submitting.';
       errorMessage.style.display = 'block';
