@@ -5,7 +5,7 @@ submitBtn.addEventListener('click', async function (e) {
   e.preventDefault();
   try {
     let queries = document.getElementById('queries').value;
-   
+
     if (queries.trim() === '') {
       errorMessage.textContent = 'Please enter some content before submitting.';
       errorMessage.style.display = 'block';
@@ -13,6 +13,7 @@ submitBtn.addEventListener('click', async function (e) {
     }
 
     errorMessage.style.display = 'none'; // Hide the error message if content is not empty
+
 
     console.log("click")
     console.log(queries);
@@ -38,7 +39,7 @@ submitBtn.addEventListener('click', async function (e) {
       throw new Error('Network response was not ok.');
     }
 
-    document.location.reload();
+   document.location.reload();
 
   } catch (err) {
     console.error(err);
