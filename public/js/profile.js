@@ -38,6 +38,33 @@ const delButtonHandler = async (event) => {
   }
 };
 
+
+
+
+const onClick = async (event) => {
+if (event.target.hasAttribute('data-id')) {
+const url = 'https://spotify23.p.rapidapi.com/search/?q=%3CREQUIRED%3E&type=multi&offset=0&limit=10&numberOfTopResults=5';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '9fc2a41540msh7748aad62993672p1367a0jsn041f4a4550ee',
+		'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+    }
+  }
+};
+
+
+
+
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
