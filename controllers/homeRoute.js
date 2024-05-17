@@ -1,4 +1,5 @@
 const router = require("express").Router();
+//const ogs = require('open-graph-scraper');
 const { Post, User, Relations } = require("../models")
 const withAuth = require("../lib/auth");
 const { linkify } = require("../lib/helpers")
@@ -13,13 +14,14 @@ router.get("/", async (req, res) => {
           model: User
         }
       ],
-      order: [['date_created', 'DESC']] // Order by createdAt attribute in descending order
+      order: [['date_created', 'DESC']] // Order by created date attribute in descending order
     })
     const userData = await User.findAll()
     
     const posts = postData.map((post) => {
-      const serial = post.get({ plain: true })
+      const serial = post.get({ plain: true }) // allows links pasted into messenger featur to be clickable
       return { ...serial, content: linkify(serial.content) }
+    
     });
     
     if (req.session.logged_in) {
