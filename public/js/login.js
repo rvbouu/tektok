@@ -4,6 +4,7 @@ const loginFormHandler = async (event) => {
   // Collect values from the login form
   const username = document.getElementById('username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
+  const errorMessageElement = document.querySelector('.errorMsgEl');
 
   if (!username || !password) {
     errorMessageElement.textContent = 'Please enter both username and password.';
