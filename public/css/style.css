@@ -273,9 +273,6 @@ nav {
 }
 
 /* ---------- About Us Handlebars ---------- */
-/* ---------- Our Story ---------- */
-
-
 /* ---------- Meet the Team ---------- */
 .meettitle {
    text-wrap: wrap;
@@ -297,6 +294,11 @@ nav {
    display: flex;
    flex-direction: column;
    align-items: center;
+}
+
+/* ---------- Coming Soon Handlebars ---------- */
+.comingsoontitle{
+   text-wrap: wrap;
 }
 
 /* ---------- Hovers ---------- */
