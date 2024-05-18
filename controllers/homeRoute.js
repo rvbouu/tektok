@@ -49,7 +49,8 @@ router.get("/", async (req, res) => {
         following,
         posts,
         users,
-        logged_in: req.session.logged_in
+        logged_in: req.session.logged_in,
+        layout: 'main'
       }); // Render the "homepage" view and pass the posts data
     } else {
       res.render("homepage",
@@ -81,7 +82,8 @@ router.get('/resources', withAuth, async (req, res) => {
 
     res.render('resources', {
       ...user,
-      logged_in: true
+      logged_in: true,
+      layout: 'main'
     });
   } catch (err) {
     res.status(500).json(err);
@@ -96,7 +98,7 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login', {
-    style: 'footer.css'
+    layout: 'stickyfooter'
   });
 });
 
@@ -114,7 +116,7 @@ router.get('/games', withAuth, async (req, res) => {
     res.render('games', {
       ...user,
       logged_in: true,
-      style: 'footer.css'
+      layout: 'stickyfooter'
     });
   } catch (err) {
     console.log(err);
@@ -161,7 +163,7 @@ router.get('/profile', withAuth, async (req, res) => {
     res.render('profile', {
       ...user,
       logged_in: true,
-      style: 'footer.css'
+      layout: 'stickyfooter'
     });
   } catch (err) {
     console.log(err)
@@ -199,7 +201,7 @@ router.get('/profile/:id', withAuth, async (req, res) => {
     res.render('otherprofiles', {
       ...user,
       logged_in: true,
-      style: 'footer.css'
+      layout: 'stickyfooter'
     });
   } catch (err) {
     console.log(err)
@@ -215,21 +217,21 @@ router.get('/login',async (req, res) => {
   }
 
   res.render('login', {
-    style: 'footer.css'
+    layout: 'stickyfooter'
   });
 });
 
 router.get('/comingsoon', async (req, res) => {
   res.render('comingsoon', {
     logged_in: req.session.logged_in,
-    style: 'footer.css'
+    layout: 'stickyfooter'
   })
 });
 
 router.get('/aboutus', async (req, res) => {
   res.render('aboutus', {
     logged_in: req.session.logged_in,
-    style: 'footer.css'
+    layout: 'stickyfooter'
   })
 })
 
