@@ -3,20 +3,24 @@
    display: flex;
    align-items: center;
 }
+
 /* logo header NOT ON MAIN/HOME HANDLEBARS*/
 .logo {
    display: flex;
    height: 100px;
    width: 160px;
 }
+
 /* user tags */
 a {
    text-decoration: none;
    color: darkslategrey;
 }
+
 #nowrap {
    flex-wrap: nowrap;
 }
+
 /* ---------- Overall Styling ---------- */
 * {
    box-sizing: border-box;
@@ -267,6 +271,34 @@ nav {
    background-color: rgb(240, 186, 36);
    border-radius: 5px;
 }
+
+/* ---------- About Us Handlebars ---------- */
+/* ---------- Our Story ---------- */
+
+
+/* ---------- Meet the Team ---------- */
+.meettitle {
+   text-wrap: wrap;
+}
+.aboutuspic {
+   height: 15rem;
+   width: 15rem;
+   border-radius: 50%;
+}
+
+.meetteam {
+   margin: 8rem 0;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+
+.teammember {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
 /* ---------- Hovers ---------- */
 .no-button:hover {
    color: rgb(240, 186, 36);
@@ -552,6 +584,7 @@ a:hover {
 
 
 /* Media Queries */
+/* 1366x768 */
 @media screen and (max-width: 1366px) {
 
    /* suggested users */
@@ -566,6 +599,7 @@ a:hover {
    }
 }
 
+/* 1280x1024 */
 @media screen and (max-width: 1280px) {
 
    /* chat feature */
@@ -586,6 +620,7 @@ a:hover {
    }
 }
 
+/* 1024x768 */
 @media screen and (max-width: 1024px) {
 
    /* joke of the day */
@@ -604,6 +639,7 @@ a:hover {
    }
 }
 
+/* 962x601 */
 @media screen and (max-width: 962px) {
 
    /* chat feature */
@@ -623,8 +659,30 @@ a:hover {
       flex-direction: column;
       align-items: center;
    }
+
+   /* ---------- Meet the Team ---------- */
+   .aboutuspic {
+      height: 15rem;
+      width: 15rem;
+      border-radius: 50%;
+   }
+
+   .meetteam {
+      margin: 8rem 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+   }
+
+   .teammember {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
 }
 
+/* 800x360 */
 @media screen and (max-width: 800px) {
 
    /* chat feature */
@@ -634,6 +692,7 @@ a:hover {
 }
 
 @media screen and (max-width: 767px) {
+
    /* header */
    #homenav,
    #logout {
@@ -656,20 +715,33 @@ a:hover {
    }
 
    /* footer */
-   footer{
+   footer {
       display: none;
    }
 }
 
 @media screen and (max-width: 480px) {
+
    /* header */
-   #vertnav, #homenav {
+   #vertnav,
+   #homenav {
       display: flex;
       flex-direction: column;
       text-align: end;
    }
 }
 
+/* 
+@media screen and (min-height:935px) {
+   body#bottom {
+      position: relative;
+      min-height: 100vh;
+   }
+
+   footer#bottom {
+      position: absolute;
+   }
+} */
 
 /* 
 homepage
@@ -700,16 +772,6 @@ homepage
 
 }
 
-@media screen and (min-height:935px) {
-   body#bottom {
-      position: relative;
-      min-height: 100vh;
-   }
-
-   footer#bottom {
-      position: absolute;
-   }
-}
 
 
 @media screen and (max-width: 992px) {
