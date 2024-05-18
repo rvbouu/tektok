@@ -277,6 +277,7 @@ nav {
 .meettitle {
    text-wrap: wrap;
 }
+
 .aboutuspic {
    height: 15rem;
    width: 15rem;
@@ -297,9 +298,10 @@ nav {
 }
 
 /* ---------- Coming Soon Handlebars ---------- */
-.comingsoontitle{
+.comingsoontitle {
    text-wrap: wrap;
 }
+
 
 /* ---------- Hovers ---------- */
 .no-button:hover {
@@ -720,6 +722,8 @@ a:hover {
    footer {
       display: none;
    }
+
+   
 }
 
 @media screen and (max-width: 480px) {
