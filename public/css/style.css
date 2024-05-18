@@ -1,3 +1,23 @@
+/* user tags */
+.user {
+   display: flex;
+   align-items: center;
+}
+/* logo header NOT ON MAIN/HOME HANDLEBARS*/
+.logo {
+   display: flex;
+   height: 100px;
+   width: 160px;
+}
+/* user tags */
+a {
+   text-decoration: none;
+   color: darkslategrey;
+}
+#nowrap {
+   flex-wrap: nowrap;
+}
+/* ---------- Overall Styling ---------- */
 * {
    box-sizing: border-box;
    margin: 0;
@@ -51,61 +71,37 @@ body {
    background-color: rgb(221, 230, 244);
 }
 
+main {
+   top: 0;
+   width: 100%;
+}
+
+:root {
+   --animate-duration: 2s;
+   --animate-delay: 1s;
+}
+
+/* ---------- Main Handlebars ---------- */
+/* ---------- Header ---------- */
 header {
    background-color: rgb(81, 92, 104);
    color: antiquewhite;
    text-decoration: none;
    font-size: 20px;
    width: 100%;
-   /* padding-right: 100px; */
-}
-
-/* logo header */
-.logo {
-   display: flex;
-   height: 100px;
-   width: 160px;
-}
-
-#nowrap {
-   flex-wrap: nowrap;
 }
 
 nav {
-   color: antiquewhite;
-   gap: 20px;
    display: flex;
    font-size: 25px;
-   margin-right: 30px;
 }
 
-ul.nav-list {
-   list-style-type: none;
-}
-
-.nav-item {
-   display: inline;
-}
-
+/* header and footer nav text color */
 .a {
-   display: flex;
-   text-decoration: none;
    color: antiquewhite;
 }
 
-a {
-   text-decoration: none;
-   color: darkslategrey;
-}
-
-a:hover {
-   color: rgb(240, 186, 36)
-}
-
-.footer-a {
-   font-size: 1rem;
-}
-
+/* logout button */
 .no-button {
    background: none;
    border: none;
@@ -116,51 +112,146 @@ a:hover {
    font-size: 100%;
 }
 
-.no-button:hover {
-   color: rgb(240, 186, 36);
-   text-decoration: underline;
+/* ---------- Footer ---------- */
+.footer {
+   bottom: 0;
+   width: 100%;
+   background-color: rgb(81, 92, 104);
+   color: antiquewhite;
 }
+
+.label {
+   padding-top: 40px;
+}
+
+.footer-a {
+   font-size: 1rem;
+}
+
+/* ---------- Homepage Handlebars ---------- */
+/* ---------- Left ---------- */
+#jokeBox {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   background-color: rgb(240, 186, 36);
+}
+
+/* chat feature */
+.chatroom {
+   margin: 0;
+   padding-bottom: 3rem;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.chatbox {
+   border: 1px grey solid;
+   border-radius: 10px;
+   height: 40rem;
+   width: 20rem;
+   padding-bottom: 50px;
+   background-color: rgb(240, 214, 139);
+   /* overflow: hidden; */
+}
+
+#chatform {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+#messages {
+   height: 30rem;
+   padding: 0;
+   overflow: scroll;
+}
+
+#messages li {
+   padding: 8px;
+   margin-bottom: 10px;
+   background: #f4f4f4;
+   border-radius: 4px;
+}
+
+#messageInput {
+   padding: 10px;
+   width: 80%;
+}
+
+#sendButton,
+#apiButton,
+#btn {
+   font-size: 0.9rem;
+   text-wrap: nowrap;
+   background: grey;
+   border: none;
+   padding: 0;
+   cursor: pointer;
+   color: antiquewhite;
+   text-decoration: none;
+   width: 120px;
+   height: 25px;
+   margin-bottom: 5px;
+}
+
+/* ---------- Center ---------- */
 
 .postdate {
    font-size: 12px;
    color: rgb(81, 92, 104)
 }
 
-/* suggested text */
-.sugest {
-   display: flex;
-   justify-content: center;
-}
-
-#asidecards {
-   justify-content: center;
-}
-
+/* adds scroll bar to post area */
 .post-area {
    height: 1000px;
-   /* overflow: visible; */
    overflow-y: auto;
 }
 
-#rightCard {
-   display: flex;
-   justify-content: space-between;
-   justify-items: center;
+/* Make A Query Section */
+.query-form {
+   background-color: #f5f5f5;
+   border: 1px grey solid;
+   border-radius: 10px;
 }
 
-/* main body */
-main {
-   top: 0;
-   width: 100%;
+.queries {
+   font-size: 1.3rem;
+   font-weight: 700;
 }
 
-/* the card on the right hand side */
+#queries {
+   height: 4rem;
+   resize: none;
+}
+
+.submitBtn {
+   background: grey;
+   border: none;
+   padding: 0;
+   cursor: pointer;
+   color: antiquewhite;
+   text-decoration: none;
+   font-size: 100%;
+   width: 100px;
+   height: 25px;
+}
+
+/* ---------- Right ---------- */
 #pcards {
    background-color: rgb(240, 186, 36);
    overflow-y: auto;
 }
 
-/* profile pic decor */
+.suggest {
+   display: flex;
+   justify-content: center;
+}
+
+#rightCard {
+   display: flex;
+   justify-content: space-between;
+}
+
 .profile-pic {
    border-radius: 50%;
    width: 40px;
@@ -176,38 +267,17 @@ main {
    background-color: rgb(240, 186, 36);
    border-radius: 5px;
 }
-
-/* cardtext label on the right */
-.user {
-   display: flex;
-   align-items: center;
+/* ---------- Hovers ---------- */
+.no-button:hover {
+   color: rgb(240, 186, 36);
+   text-decoration: underline;
 }
 
-/* footer */
-.footer {
-   bottom: 0;
-   width: 100%;
-   /* height: 15rem; */
-   background-color: rgb(81, 92, 104);
-   color: antiquewhite;
+a:hover {
+   color: rgb(240, 186, 36)
 }
 
-/*  label for the title text on the footer bar */
-.label {
-   display: flex;
-   padding-top: 40px;
-}
-
-/* label for the entire text in footer */
-#label {
-   padding-bottom: 40px;
-}
-
-/* footer tektok text */
-#tektok {
-   display: flex;
-   justify-items: center;
-}
+/* ============================================================================== */
 
 /* resourse page */
 .container2 {
@@ -355,7 +425,6 @@ main {
 .explore {
    display: flex;
    justify-content: center;
-   /* padding-right: 1500px; */
    text-align: center;
    margin-bottom: 20px;
    padding-top: 20px;
@@ -364,53 +433,10 @@ main {
 
 }
 
-:root {
-   --animate-duration: 2s;
-   --animate-delay: 1s;
-}
 
 #myCanvas {
    background: #eee;
    display: block;
-}
-
-/* Homepage Section */
-/* joke container */
-#jokeBox {
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   background-color: rgb(240, 186, 36);
-
-}
-
-/* Make A Query Section */
-.query-form {
-   background-color: #f5f5f5;
-   border: 1px grey solid;
-   border-radius: 10px;
-}
-
-.queries {
-   font-size: 1.3rem;
-   font-weight: 700;
-}
-
-#queries {
-   height: 4rem;
-   resize: none;
-}
-
-.submitBtn {
-   background: grey;
-   border: none;
-   padding: 0;
-   cursor: pointer;
-   color: antiquewhite;
-   text-decoration: none;
-   font-size: 100%;
-   width: 100px;
-   height: 25px;
 }
 
 /* profile section */
@@ -522,124 +548,131 @@ main {
    height: 2rem;
 }
 
-/* chat feature */
-.chatroom {
-   margin: 0;
-   padding-bottom: 3rem;
-   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+
+
+/* Media Queries */
+@media screen and (max-width: 1366px) {
+
+   /* suggested users */
+   #rightCard {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .follow {
+      width: 100%;
+      margin-top: 10px;
+   }
 }
 
-.chatbox {
-   border: 1px grey solid;
-   border-radius: 10px;
-   height: 40rem;
-   width: 20rem;
-   background-color: rgb(240, 214, 139);
-   overflow: hidden;
+@media screen and (max-width: 1280px) {
+
+   /* chat feature */
+   #chatbox {
+      height: 30rem;
+      width: 15rem;
+      padding-bottom: 50px;
+   }
+
+   #messages {
+      height: 20rem;
+   }
+
+   .btnDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
 }
 
-#chatform{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+@media screen and (max-width: 1024px) {
+
+   /* joke of the day */
+   #joketitle {
+      font-size: 1rem;
+   }
+
+   .question,
+   .answer {
+      font-size: 0.9rem;
+   }
+
+   /* suggested user */
+   .follow {
+      font-size: 0.8rem;
+   }
 }
 
-#messages {
-   height:30rem;
-   list-style-type: none;
-   padding: 0;
-   overflow: scroll;
+@media screen and (max-width: 962px) {
+
+   /* chat feature */
+   #chatbox {
+      height: 25rem;
+      width: 200px;
+      padding-bottom: 50px;
+   }
+
+   #messages {
+      height: 15rem;
+   }
+
+   /* suggested users */
+   #profilecard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
 }
 
-#messages li {
-   padding: 8px;
-   margin-bottom: 10px;
-   background: #f4f4f4;
-   border-radius: 4px;
+@media screen and (max-width: 800px) {
+
+   /* chat feature */
+   #chatbox {
+      display: none;
+   }
 }
 
-#messageInput {
-   padding: 10px;
-   width: 80%;
+@media screen and (max-width: 767px) {
+   /* header */
+   #homenav,
+   #logout {
+      font-size: 1rem;
+   }
+
+   #logout {
+      align-items: center;
+   }
+
+   /* suggested users */
+   #rightCard {
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .follow {
+      width: 100%;
+      margin-top: 10px;
+   }
+
+   /* footer */
+   footer{
+      display: none;
+   }
 }
 
-#sendButton,
-#apiButton, #btn {
-   font-size: 0.9rem;
-   text-wrap: nowrap;
-   background: grey;
-   border: none;
-   padding: 0;
-   cursor: pointer;
-   color: antiquewhite;
-   text-decoration: none;
-   width: 120px;
-   height: 25px;
-   margin-bottom: 5px;
-}
-
-/* chat feature */
-.chatroom {
-   margin: 0;
-   padding-bottom: 3rem;
-   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-.chatbox {
-   border: 1px grey solid;
-   border-radius: 10px;
-   height: 40rem;
-   width: 20rem;
-   background-color: rgb(240, 214, 139);
-   overflow: hidden;
-}
-
-#chatform{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-}
-
-#messages {
-   height:30rem;
-   list-style-type: none;
-   padding: 0;
-   overflow: scroll;
-}
-
-#messages li {
-   padding: 8px;
-   margin-bottom: 10px;
-   background: #f4f4f4;
-   border-radius: 4px;
-}
-
-#messageInput {
-   padding: 10px;
-   width: 80%;
-}
-
-#sendButton,
-#apiButton, #btn {
-   font-size: 0.9rem;
-   text-wrap: nowrap;
-   background: grey;
-   border: none;
-   padding: 0;
-   cursor: pointer;
-   color: antiquewhite;
-   text-decoration: none;
-   width: 120px;
-   height: 25px;
-   margin-bottom: 5px;
-}
-
-.footerlogo{
-   margin-top: 80px;
+@media screen and (max-width: 480px) {
+   /* header */
+   #vertnav, #homenav {
+      display: flex;
+      flex-direction: column;
+      text-align: end;
+   }
 }
 
 
-/* homepage */
+/* 
+homepage
 @media screen and (max-width: 600px) {
 
    header,
@@ -647,15 +680,16 @@ main {
       background-color: rgb(44, 50, 56);
    }
 
-   #homenav, #logout {
+   #homenav,
+   #logout {
       font-size: 20px;
       justify-content: space-evenly;
    }
 
    .mediabreak {
       flex-direction: column;
-       word-wrap: break-word;
-      /* flex-wrap: wrap;  */
+      word-wrap: break-word;
+      flex-wrap: wrap; 
    }
 
    .card-body {
@@ -663,20 +697,19 @@ main {
       width: 100%;
 
    }
-   
- }
 
- @media screen and (min-heigth:935px)
- {
+}
+
+@media screen and (min-height:935px) {
    body#bottom {
       position: relative;
       min-height: 100vh;
-    }
-    
-    footer#bottom {
+   }
+
+   footer#bottom {
       position: absolute;
-    }
- }
+   }
+}
 
 
 @media screen and (max-width: 992px) {
@@ -712,14 +745,14 @@ main {
 
 
 
-/* resorces */
-@media screen and (max-width:935px)
-{
-    body#bottom {
-     position: fixed;
-     min-height: 100vh;
-   } 
-   body{
+resorces
+@media screen and (max-width:935px) {
+   body#bottom {
+      position: fixed;
+      min-height: 100vh;
+   }
+
+   body {
       flex-direction: column;
       flex-wrap: wrap;
    }
@@ -727,23 +760,21 @@ main {
 
 
 
-/* game page */
-@media screen and (max-width: 984px){
- 
-   #myCanvas{
+game page
+@media screen and (max-width: 984px) {
+
+   #myCanvas {
       flex-direction: column;
-      
+
    }
-   
+
 }
 
-/* profile */
-@media screen and (max-width: 984px)
-{
-      #profile{
-         flex-direction: column;
-         background-color:rgb(213, 166, 36);
-      }
-     
-}
-   
+profile
+@media screen and (max-width: 984px) {
+   #profile {
+      flex-direction: column;
+      background-color: rgb(213, 166, 36);
+   }
+
+} */
