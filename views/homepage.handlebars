@@ -1,12 +1,12 @@
 <div id="viewport" class="justify-space-between row">
-  <div id="jokeBox" class="col-3 p-5">
+  <div id="jokeBox" class="col-md-3 col-12 p-5">
     <aside id="jokeBox" class="col-12">
-      <h3 class="mediabreak">Coding Joke of the Day</h3>
+      <h3 id="joketitle" class="mediabreak">Coding Joke of the Day</h3>
       {{{get_joke}}}
       <div class="answer"></div>
     </aside>
     {{#if logged_in}}
-    <section class="chatbox mt-5">
+    <section class="chatbox mt-5" id="chatbox">
       <h2 class="text-center usertext">Talk the Tok</h2>
       <aside class="chatroom">
         {{>homepage-details}}
@@ -15,7 +15,7 @@
     {{/if}}
   </div>
 
-  <section class="post-area col-6">
+  <section class="post-area col-md-6 col-12">
     {{#if logged_in}}
     <form class="form query-form m-3 p-3 text-center shadow-sm">
       <label for="queries" class="queries mb-1">Make A Query</label>
@@ -41,16 +41,16 @@
   </section>
 
   {{#if logged_in}}
-  <aside id="pcards" class="suggested py-5 px-3 col-3">
-    <h3 class="sugest">Suggested Users</h3>
+  <aside id="pcards" class="suggested py-5 px-3 col-md-3 col-12">
+    <h3 class="suggest">Suggested Users</h3>
     {{#each users as |user|}}
 
     <div class="card m-3 border-0 shadow-sm"
       style="background-color: #F5F5F5; border-radius: 10px;  border-color:rgb(221, 230, 244)grey">
       <div id="rightCard" class="card-body">
-        <a href="/profile/{{id}}" class="other-user row">
+        <a href="/profile/{{id}}" class="other-user row" id="profilecard">
           <img src="{{profile_pic}}" alt="profile pic" class="profile-pic col-2">
-          <h5 id="card-body" class="user col-5 mx-2">@{{username}}</h5>
+          <h5 class="user col-12 col-lg-5">@{{username}}</h5>
         </a>
         <button type="button" class="follow col-5" id="{{id}}">Follow</button>
       </div>
@@ -61,20 +61,20 @@
     <div class="card m-3 border-0 shadow-sm"
       style="background-color: #F5F5F5; border-radius: 10px;  border-color:rgb(221, 230, 244)grey">
       <div id="rightCard" class="card-body">
-        <a href="/profile/{{id}}" class="other-user row">
+        <a href="/profile/{{id}}" class="other-user row" id="profilecard">
           <img src="{{profile_pic}}" alt="profile pic" class="profile-pic col-2">
-          <h5 class="user col-5 mx-2">@{{username}}</h5>
+          <h5 class="user col-12 col-lg-5">@{{username}}</h5>
         </a>
-        <button type="button" class="follow col-5 bg-info ml-1" id="{{id}}">Unfollow</button>
+        <button type="button" class="follow col-5 bg-info" id="{{id}}">Unfollow</button>
       </div>
     </div>
     {{/each}}
   </aside>
   {{/if}}
 </div>
-<script src="/js/follow.js"></script>
 <script src="/js/codingjoke.js"></script>
 {{#if logged_in}}
+<script src="/js/follow.js"></script>
 <script src="/js/add-post.js"></script>
 <script src="/js/codingjoke.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/linkifyjs@4.1.3/dist/linkify.min.js"></script>

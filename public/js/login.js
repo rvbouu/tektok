@@ -2,14 +2,15 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
-  const username = document.getElementById('username-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
-
+  const username = document.getElementById('username-login').value;
+  const password = document.querySelector('#password-login').value;
+  const errorMessageElement = document.querySelector('.errorMsgEl');
+  console.log(username, password)
   if (!username || !password) {
     errorMessageElement.textContent = 'Please enter both username and password.';
     return; // Stop further execution if fields are empty
   }
-
+  // console.log('b4 fetch')
   // Send a POST request to the API endpoint
   const response = await fetch('/api/users/login', {
     method: 'POST',
@@ -28,11 +29,11 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const firstname = document.querySelector('#fname-signup').value.trim();
-  const lastname = document.querySelector('#lname-signup').value.trim();
-  const username = document.getElementById('username-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const firstname = document.querySelector('#fname-signup').value;
+  const lastname = document.querySelector('#lname-signup').value;
+  const username = document.getElementById('username-signup').value;
+  const email = document.querySelector('#email-signup').value;
+  const password = document.querySelector('#password-signup').value;
 
   if (!firstname || !lastname || !username || !email || !password) {
     const errorMessage = document.createElement('p');
