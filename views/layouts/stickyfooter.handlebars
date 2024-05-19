@@ -28,13 +28,14 @@
   <title>Tek Tok</title>
 </head>
 {{!-- keeps footer at the bottom on pages that don't have enough body content to push it down --}}
+
 <body id="bottom">
   <div class="justify-space-between">
     <header class="row p-2">
       <div class="col-3 animate__animated animate__fadeInRightBig">
         <object id="svg1" data="/assets/tektokyellowtext.svg" type="image/svg+xml" width="100" height="100"></object>
       </div>
-{{!-- nav bar --}}
+      {{!-- nav bar --}}
       <nav class="display-flex col-8 align-items-center justify-content-end">
         <div>
           <ul id="vertnav" class="row justify-content-between nav-list">
@@ -50,7 +51,7 @@
             <li id="profnav" class="col-sm-2 col-12 mx-sm-3 nav-item animate__animated animate__fadeInRightBig">
               <a id="homenav" href="/profile" class="a">Profile</a>
             </li>
-{{!-- if user is logged in, display logout button --}}
+            {{!-- if user is logged in, display logout button --}}
             {{#if logged_in}}
             <li id="logout" class="col-sm-1 col-12 animate__animated animate__fadeInRightBig">
               <button class="no-button" id="logout">Logout</button>
@@ -66,7 +67,7 @@
         </div>
       </nav>
     </header>
-  {{!-- where other handlebars pages will get inputted to --}}
+    {{!-- where other handlebars pages will get inputted to --}}
     <main class="justify-space-between row">
       {{{body}}}
     </main>
