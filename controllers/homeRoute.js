@@ -1,8 +1,7 @@
 const router = require("express").Router();
-//const ogs = require('open-graph-scraper');
 const { Post, User, Relations } = require("../models")
 const withAuth = require("../lib/auth");
-const { linkify } = require("../lib/helpers")
+const { linkify } = require("../lib/helpers") //npm package used to allow URL links to be pasted in query box to be clickable and not just plain text.  
 
 
 // get route findall posts
@@ -19,7 +18,7 @@ router.get("/", async (req, res) => {
     const userData = await User.findAll()
     
     const posts = postData.map((post) => {
-      const serial = post.get({ plain: true }) // allows links pasted into messenger featur to be clickable
+      const serial = post.get({ plain: true }) // allows links pasted into messenger feature to be clickable
       return { ...serial, content: linkify(serial.content) }
     
     });
