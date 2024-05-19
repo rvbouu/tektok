@@ -26,5 +26,3 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
-
-// NEED TO REVISE WITH TEKTOK STUFF

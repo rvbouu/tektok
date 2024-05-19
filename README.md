@@ -22,13 +22,13 @@ Welcome to Tek Tok! (Not to be confused with Tik Tok). We got our start in the S
 
 ## Authors
 
-Reynolds Addy
+[Reynolds Addy](https://github.com/Reynoldscode)
 
-Vanessa Bou
+[Vanessa Bou](https://github.com/rvbouu)
 
-Joel Hansen
+[Joel Hansen](https://github.com/JoelhansenMN)
 
-Maggie McDowell
+[Maggie McDowell](https://github.com/magtron3030)
 
 ## Badges and Acknowledgements
 
@@ -47,10 +47,11 @@ Maggie McDowell
 [![Socket.io](https://img.shields.io/badge/Socket.io-010101?&style=for-the-badge&logo=Socket.io&logoColor=white)](https://socket.io/)
 [![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)](https://code.visualstudio.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
+[![GitHub Project Board](https://img.shields.io/badge/GitHub_Project_Board-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/users/rvbouu/projects/1)
 
 [![Bootstrap]( https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
 
-[![Static Badge](https://img.shields.io/badge/Animate.css-orange)](https://animate.style/)
+[![Animate.css](https://img.shields.io/badge/Animate.css-orange)](https://animate.style/)
 [![Linkify](https://img.shields.io/badge/linkify-blue)](https://linkify.js.org/)
 
 ### *Inspired By*
@@ -61,9 +62,31 @@ Maggie McDowell
 
 ## Installation
 
-npm install instructions here
+💾
+
+`npm init`
+
+`npm i animate.css animejs bcrypt connect-session-sequelize
+dotenv express express-handlebars express session linkify-html linkifyjs pg sequelize socket.io`
 
 ## Usage and Screenshots
+
+***Before beginning on local machine***
+
+- To seed data and create the PostgreSQL tables, type `npm run seed` into command-line
+- After seeding data, type `node server.js` or `nodemon server.js` to run the application.
+
+When users first come to the site, they will get to see posts made by other users as well as the 'Coding Joke of the Day'.
+![Homepage when not logged in](Screenshot goes here)
+
+Users without accounts will also have access to the links that are in the footer. Because we are a small group with no funding yet, some of our pages will say 'Coming Soon from the Creators of Tek Tok'.
+![Backstory page](Screenshot goes here)
+![Coming soon page](Screenshot goes here)
+
+If users try to navigate to a page that requires them to be logged in, they will be redirected to the signup/login page where they can create an account.
+![Login page](Screenshot goes here)
+
+Once a user creates an account or signs up for one, they are able to access the other pages linked in the header.
 
 Screenshots with instructions needed here
 
