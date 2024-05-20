@@ -5,11 +5,13 @@ audio.volume = 0.25;
 // Play the audio
 function playAudio() {
     audio.play();
+    audio.volume = 0.25;
 }
 
 // Pause the audio
 function pauseAudio() {
     audio.pause();
+    audio.volume = 0.25;
 }
 
 
