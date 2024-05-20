@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
 
-
+//route for posts (aka "queries") on home page
 router.post('/', async (req, res) => {
   try {
     console.log('user-info:',req.body)
@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
     
     // Retrieve the newly created post along with the user data in descending order based on the post's creation date
     const posts = await Post.findAll({
-      order: [['date_created', 'ASC']] // Order by date created attribute in descending order
+      order: [['date_created', 'ASC']] // Order by date_created attribute in descending order
     });
 
     res.status(200).json(posts);
