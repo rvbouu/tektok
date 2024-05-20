@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {Relations, User} = require('../../models');
 
+//finding out the user id by their primary key for being a follow or following
 router.post('/', async (req, res) => {
   try{
     console.log('req.body info',req.body)
@@ -19,6 +20,7 @@ router.post('/', async (req, res) => {
   }
 })
 
+//unfollowing a specific user by their id
 router.delete('/:id', async (req, res) => {
   try{
     const followData = await Relations.destroy({where: {

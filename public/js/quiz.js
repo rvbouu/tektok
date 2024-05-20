@@ -1,4 +1,4 @@
-
+//quiz questions and answers
 const quizQs = [
   {
     question: "What's your favorite color?",
@@ -51,6 +51,7 @@ let quizScore = [];
 let selectedAns = [];
 const totalQs = quizQs.length;
 
+//gather all global variables to be able to call when needed
 const container = document.querySelector('.quiz-container');
 const questionEl = document.querySelector('.question');
 const opt1 = document.querySelector('.opt1');
@@ -110,6 +111,7 @@ function loadNextQ() {
     nextButton.textContent = 'Finish';
   }
 
+  //depending on score level, you're assigned a "personality"
   if (currentQ == totalQs) {
     container.style.display = 'none';
     if (totalScore <= 5){
