@@ -1,22 +1,3 @@
-/* user tags */
-.user {
-   display: flex;
-   align-items: center;
-}
-/* logo header NOT ON MAIN/HOME HANDLEBARS*/
-.logo {
-   display: flex;
-   height: 100px;
-   width: 160px;
-}
-/* user tags */
-a {
-   text-decoration: none;
-   color: darkslategrey;
-}
-#nowrap {
-   flex-wrap: nowrap;
-}
 /* ---------- Overall Styling ---------- */
 * {
    box-sizing: border-box;
@@ -81,6 +62,12 @@ main {
    --animate-delay: 1s;
 }
 
+/* user tags */
+a {
+   text-decoration: none;
+   color: darkslategrey;
+}
+
 /* ---------- Main Handlebars ---------- */
 /* ---------- Header ---------- */
 header {
@@ -129,6 +116,12 @@ nav {
 }
 
 /* ---------- Homepage Handlebars ---------- */
+/* user tags */
+.user {
+   display: flex;
+   align-items: center;
+}
+
 /* ---------- Left ---------- */
 #jokeBox {
    display: flex;
@@ -267,19 +260,38 @@ nav {
    background-color: rgb(240, 186, 36);
    border-radius: 5px;
 }
-/* ---------- Hovers ---------- */
-.no-button:hover {
-   color: rgb(240, 186, 36);
-   text-decoration: underline;
+
+/* ---------- About Us Handlebars ---------- */
+/* ---------- Meet the Team ---------- */
+.meettitle {
+   text-wrap: wrap;
 }
 
-a:hover {
-   color: rgb(240, 186, 36)
+.aboutuspic {
+   height: 15rem;
+   width: 15rem;
+   border-radius: 50%;
 }
 
-/* ============================================================================== */
+.meetteam {
+   margin: 8rem 0;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
 
-/* resourse page */
+.teammember {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+/* ---------- Coming Soon Handlebars ---------- */
+.comingsoontitle {
+   text-wrap: wrap;
+}
+
+/* ---------- Resources Handlebars ---------- */
 .container2 {
    display: flex;
    flex-wrap: wrap;
@@ -288,7 +300,7 @@ a:hover {
    background-color: rgb(240, 186, 36);
    gap: 15px;
    width: 100%;
-   height: 1000px;
+   height: 100%;
 }
 
 .cardR1 {
@@ -305,7 +317,7 @@ a:hover {
 .cardR2 {
    color: black;
    height: 400px;
-
+   
    padding-top: 20px;
    border-radius: 10px;
    background-color: rgb(221, 230, 244);
@@ -354,7 +366,7 @@ a:hover {
    /* padding-top:20px; */
    border-radius: 10px;
    background-color: rgb(221, 230, 244);
-
+   
 }
 
 .sections,
@@ -364,7 +376,7 @@ a:hover {
 .sections5,
 .sections6 {
    flex: 0 0 calc(33.33% - 300px);
-
+   
 }
 
 .card-title {
@@ -428,18 +440,11 @@ a:hover {
    text-align: center;
    margin-bottom: 20px;
    padding-top: 20px;
-   border-radius: 10px;
-
-
+   border-radius: 10px;  
 }
 
 
-#myCanvas {
-   background: #eee;
-   display: block;
-}
-
-/* profile section */
+/* ---------- Profile Handlebars ---------- */
 .readme-view,
 .queries-made,
 #follower-sect,
@@ -502,20 +507,7 @@ a:hover {
    justify-content: space-around;
 }
 
-/* other users' profiles */
-.readme-view,
-.queries-made,
-#follower-sect,
-#following-sect {
-   border: 1px grey solid;
-   border-radius: 10px;
-   height: fit-content;
-}
-
-.readme-prof {
-   width: 200px;
-   height: 200px;
-}
+/* ---------- Other Profiles Handlebars ---------- */
 
 .o-scroll {
    max-height: 400px;
@@ -527,7 +519,7 @@ a:hover {
    overflow-y: auto;
 }
 
-/* login page */
+/* ---------- Login Handlebars ---------- */
 .signup-form {
    background-color: #f5f5f5;
    border: 1px grey solid;
@@ -536,6 +528,10 @@ a:hover {
    display: flex;
    flex-direction: column;
    justify-content: center;
+}
+
+.signuptitle{
+   text-wrap: wrap;
 }
 
 .loginpage {
@@ -548,24 +544,33 @@ a:hover {
    height: 2rem;
 }
 
+/* ---------- Hovers ---------- */
+.no-button:hover {
+   color: rgb(240, 186, 36);
+   text-decoration: underline;
+}
 
-
+a:hover {
+   color: rgb(240, 186, 36)
+}
 
 /* Media Queries */
+/* 1366x768 */
 @media screen and (max-width: 1366px) {
-
+   
    /* suggested users */
    #rightCard {
       flex-direction: column;
       align-items: center;
    }
-
+   
    .follow {
       width: 100%;
       margin-top: 10px;
    }
 }
 
+/* 1280x1024 */
 @media screen and (max-width: 1280px) {
 
    /* chat feature */
@@ -586,6 +591,7 @@ a:hover {
    }
 }
 
+/* 1024x768 */
 @media screen and (max-width: 1024px) {
 
    /* joke of the day */
@@ -604,6 +610,7 @@ a:hover {
    }
 }
 
+/* 962x601 */
 @media screen and (max-width: 962px) {
 
    /* chat feature */
@@ -623,8 +630,30 @@ a:hover {
       flex-direction: column;
       align-items: center;
    }
+
+   /* ---------- Meet the Team ---------- */
+   .aboutuspic {
+      height: 15rem;
+      width: 15rem;
+      border-radius: 50%;
+   }
+
+   .meetteam {
+      margin: 8rem 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+   }
+
+   .teammember {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
 }
 
+/* 800x360 */
 @media screen and (max-width: 800px) {
 
    /* chat feature */
@@ -634,6 +663,7 @@ a:hover {
 }
 
 @media screen and (max-width: 767px) {
+
    /* header */
    #homenav,
    #logout {
@@ -656,48 +686,25 @@ a:hover {
    }
 
    /* footer */
-   footer{
+   footer {
       display: none;
    }
+
+   .readme-prof {
+      height: 100px;
+      width: 100px;
+   }   
 }
 
 @media screen and (max-width: 480px) {
+
    /* header */
-   #vertnav, #homenav {
+   #vertnav,
+   #homenav {
       display: flex;
       flex-direction: column;
       text-align: end;
    }
-}
-
-
-/* 
-homepage
-@media screen and (max-width: 600px) {
-
-   header,
-   footer {
-      background-color: rgb(44, 50, 56);
-   }
-
-   #homenav,
-   #logout {
-      font-size: 20px;
-      justify-content: space-evenly;
-   }
-
-   .mediabreak {
-      flex-direction: column;
-      word-wrap: break-word;
-      flex-wrap: wrap; 
-   }
-
-   .card-body {
-      float: none;
-      width: 100%;
-
-   }
-
 }
 
 @media screen and (min-height:935px) {
@@ -710,71 +717,3 @@ homepage
       position: absolute;
    }
 }
-
-
-@media screen and (max-width: 992px) {
-   #homenav {
-      font-size: 25px;
-      justify-content: space-evenly;
-   }
-
-   .card-body {
-      flex-direction: column;
-      justify-content: center;
-   }
-
-   #card-body {
-      flex-direction: column;
-      justify-content: center;
-   }
-
-   header,
-   .footer {
-      background-color: rgb(63, 71, 80);
-   }
-
-   button {
-      width: 100%;
-   }
-
-   #jokebox,
-   #pcards {
-      background-color: rgb(213, 166, 36);
-   }
-}
-
-
-
-resorces
-@media screen and (max-width:935px) {
-   body#bottom {
-      position: fixed;
-      min-height: 100vh;
-   }
-
-   body {
-      flex-direction: column;
-      flex-wrap: wrap;
-   }
-}
-
-
-
-game page
-@media screen and (max-width: 984px) {
-
-   #myCanvas {
-      flex-direction: column;
-
-   }
-
-}
-
-profile
-@media screen and (max-width: 984px) {
-   #profile {
-      flex-direction: column;
-      background-color: rgb(213, 166, 36);
-   }
-
-} */
