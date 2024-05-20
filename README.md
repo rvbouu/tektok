@@ -4,6 +4,8 @@
 
 Welcome to Tek Tok! (Not to be confused with Tik Tok). We got our start in the Spring of 2024 when four individuals from all over the US found themselves paired up while enrolled in a full-stack coding program at the University of Minnesota. Through late night discussions, laughter, tears, and an idea that it would be great to have a social-media site for programmers; Tek Tok was born. Thanks for checking us out! 
 
+[Here](https://github.com/users/rvbouu/projects/1) is the link to our project board. It is also linked below in our [Badges and Acknowledgements](#badges-and-acknowledgements) section.
+
 ## Table of Contents
 
 * [Description](#description)
@@ -32,7 +34,7 @@ Welcome to Tek Tok! (Not to be confused with Tik Tok). We got our start in the S
 
 ## Badges and Acknowledgements
 
-**Thank you** to our instructor Gary and TA Katy for assisting us with our many GitHub and code issues.
+**Thank you** to our instructor Gary and TAs, Katy and Austin, for assisting us with our many GitHub and code issues.
 
 **Thank you** to all team members for all their hard work and efforts.
 
