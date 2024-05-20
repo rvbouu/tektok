@@ -1,5 +1,6 @@
 // Get the audio element by its id
 const audio = document.getElementById('my_audio');
+audio.volume = 0.25;
 
 // Play the audio
 function playAudio() {
