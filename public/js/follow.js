@@ -1,5 +1,6 @@
 const followBtn = document.querySelectorAll('.follow')
 
+//listening for a click to follow a new user
 for (let i = 0; i < followBtn.length; i++) {
   followBtn[i].addEventListener('click', async function (e) {
     console.log("follow")
@@ -14,6 +15,7 @@ for (let i = 0; i < followBtn.length; i++) {
         }),
         headers: { 'Content-Type': 'application/json' }
       })
+      //unfollowing a user
       if (res) {
         followBtn[i].textContent = 'Unfollow'
         followBtn[i].classList.add('bg-info')

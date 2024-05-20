@@ -1,3 +1,4 @@
+{{!-- The profile section displays personalized user information and user activity --}}
 <div id="profile" class="align-items-center row">
   <h1 class="mb-5 mt-2 col-12 text-center">Hello, {{firstname}}!</h1>
 
@@ -21,7 +22,10 @@
       </div>
     </div>
   </section>
+
+{{!--  The email section allows users to edit their profile information. --}}
   <section id="email" class="update-user col-md-4">
+
     <h3 class="display-flex text-center">Edit Profile</h3>
     <form class="form update-form text-center shadow-sm mb-3">
       <div class="form-group row my-4 align-items-center">
@@ -44,6 +48,8 @@
     </form>
     <div id="update-msg"></div>
   </section>
+  
+{{!-- The relations section displays the user's followers and users they are following. --}}
   <div class="row text-center relations col-md-4 p-3">
     <section id="follower-sect" class="col-xl-5 mx-1">
       <h3 class="display-flex justify-center usertext">Followers</h3>

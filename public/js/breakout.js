@@ -1,21 +1,23 @@
+//javascript code for breakout game on games page
+
 const canvas = document.getElementById("myCanvas");
 const messageElement = document.getElementById("message");
 const ctx = canvas.getContext("2d");
 const ballRadius = 10;
 
-let x = canvas.width / 2;
+let x = canvas.width / 2;  //params for play area
 let y = canvas.height - 30;
 let dx = 2;
 let dy = -2;
 
-const paddleHeight = 10;
+const paddleHeight = 10;  //params for paddle
 const paddleWidth = 75;
 
 let paddleX = (canvas.width - paddleWidth) / 2;
 let rightPressed = false;
 let leftPressed = false;
 
-const brickRowCount = 6;
+const brickRowCount = 6;  //params for bricks
 const brickColumnCount = 4;
 const brickWidth = 75;
 const brickHeight = 20;
@@ -65,7 +67,7 @@ function mouseMoveHandler(e) {
     paddleX = relativeX - paddleWidth / 2;
   }
 }
-function collisionDetection() {
+function collisionDetection() { //function breaks bricks when hit by the ball.  
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
       let b = bricks[c][r];
@@ -80,7 +82,7 @@ function collisionDetection() {
           b.status = 0;
           score++;
           if (score == brickRowCount * brickColumnCount) {
-            showMessage("YOU WIN, CONGRATS!");
+            showMessage("YOU WIN, CONGRATS!");  //show message used as alerts were not allowed for this assignment.  
             //setTimeout(function(){
               document.location.reload();
             //}, 3000)
@@ -134,7 +136,7 @@ function drawLives() {
   ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
 }
 
-function draw() {
+function draw() { //this function all above functions are called in and allows the game to work
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBricks();
   drawBall();
@@ -154,7 +156,7 @@ function draw() {
     } else {
       lives--;
       if (!lives) {
-        showMessage("GAME OVER");
+        showMessage("GAME OVER"); //message for game over.  showMessage used as alerts were not allowed for this assignment.  
         //setTimeout(function(){
         document.location.reload();
       //}, 3000);

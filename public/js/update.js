@@ -1,5 +1,6 @@
 const updateBtn = document.querySelector('.update-btn')
 
+//updating email, password and readme on profile page
 updateBtn.addEventListener('click', async function (e) {
   e.preventDefault();
 
@@ -23,6 +24,7 @@ updateBtn.addEventListener('click', async function (e) {
   pwError.innerHTML = '';
   emailError.innerHTML = '';
   
+  //setting password to being 8 or more characters
   if (pw.length < 8) {
     pwError.innerHTML = `<p class="text-danger">Password must be 8 or more characters.</p>`;
     return;
