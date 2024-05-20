@@ -30,6 +30,7 @@ const socket = io();
     }
   });
 
+  // Clear messages 
   apiButton.addEventListener('click', function(e) {
     document.location.reload();
   });

@@ -2,7 +2,7 @@
 <div id="profile" class="align-items-center row">
   <h1 class="mb-5 mt-2 col-12 text-center">Hello, {{firstname}}!</h1>
 
-  <section class="user-info col-4 p-2">
+  <section class="user-info col-md-4 p-2">
     <div class="col-12 prof-pic text-center">
       <img src="{{profile_pic}}" alt="profile pic" class="profile-pic readme-prof" />
     </div>
@@ -24,7 +24,8 @@
   </section>
 
 {{!--  The email section allows users to edit their profile information. --}}
-  <section id="email" class="update-user col-4">
+  <section id="email" class="update-user col-md-4">
+
     <h3 class="display-flex text-center">Edit Profile</h3>
     <form class="form update-form text-center shadow-sm mb-3">
       <div class="form-group row my-4 align-items-center">
@@ -49,8 +50,8 @@
   </section>
   
 {{!-- The relations section displays the user's followers and users they are following. --}}
-  <div class="row text-center relations col-4 p-3">
-    <section id="follower-sect" class="col-5 mx-1">
+  <div class="row text-center relations col-md-4 p-3">
+    <section id="follower-sect" class="col-xl-5 mx-1">
       <h3 class="display-flex justify-center usertext">Followers</h3>
       <div class="user-relations">
         {{#each followers as |user|}}
@@ -61,7 +62,7 @@
         {{/each}}
       </div>
     </section>
-    <section id="following-sect" class="col-5 mx-1">
+    <section id="following-sect" class="col-xl-5 mx-1">
       <h3 class="display-flex justify-center usertext">Following</h3>
       <div class="user-relations">
         {{#each following as |user|}}

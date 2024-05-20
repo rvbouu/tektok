@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Tek Tok" />
+  <meta property="og:description"
+    content="Social Media Site for those in the tech world or have an interest in tech." />
+  <meta property="og:image" content="https://tektok.onrender.com/assets/4.png" />
+  <meta property="og:url" content="https://tektok.onrender.com/" />
+  {{!-- Google Fonts - custom font for webpage --}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+  {{!-- Animate.css stylesheet--}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  {{!-- Bootstrap stylesheet --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  {{!-- custom stylesheets --}}
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/quiz.css">
+  <link rel="stylesheet" href="/css/style.css">
+  {{!-- tab icon --}}
+  <link rel="icon" href="/assets/apple-icon-180x180.png" />
+  <title>Tek Tok</title>
+</head>
+{{!-- keeps footer at the bottom on pages that don't have enough body content to push it down --}}
+
+<body id="bottom">
+  <div class="justify-space-between">
+    <header class="row p-2">
+      <div class="col-3 animate__animated animate__fadeInRightBig">
+        <object id="svg1" data="/assets/tektokyellowtext.svg" type="image/svg+xml" width="100" height="100"></object>
+      </div>
+      {{!-- nav bar --}}
+      <nav class="display-flex col-8 align-items-center justify-content-end">
+        <div>
+          <ul id="vertnav" class="row justify-content-between nav-list">
+            <li class="col-sm-1 col-12 nav-item animate__animated animate__fadeInRightBig">
+              <a id="homenav" href="/" class="a">Home</a>
+            </li>
+            <li class="col-sm-3 col-12 nav-item animate__animated animate__fadeInRightBig">
+              <a id="homenav" href="/resources" class="a">Resources</a>
+            </li>
+            <li class="col-sm-1 col-12 nav-item animate__animated animate__fadeInRightBig">
+              <a id="homenav" href="/games" class="a">Games</a>
+            </li>
+            <li id="profnav" class="col-sm-2 col-12 mx-sm-3 nav-item animate__animated animate__fadeInRightBig">
+              <a id="homenav" href="/profile" class="a">Profile</a>
+            </li>
+            {{!-- if user is logged in, display logout button --}}
+            {{#if logged_in}}
+            <li id="logout" class="col-sm-1 col-12 animate__animated animate__fadeInRightBig">
+              <button class="no-button" id="logout">Logout</button>
+            </li>
+            {{else}}
+            {{!-- else if user is logged out, display login button --}}
+            <li class="col-sm-1 col-12 animate__animated animate__fadeInRightBig">
+              <a id="homenav" href="/login" class="a">Login</a>
+            </li>
+            {{/if}}
+            {{!-- end if --}}
+          </ul>
+        </div>
+      </nav>
+    </header>
+    {{!-- where other handlebars pages will get inputted to --}}
+    <main class="justify-space-between row">
+      {{{body}}}
+    </main>
+    {{!-- keeps footer at the bottom on pages that don't have enough body content to push it down --}}
+    <footer id="bottom" class="footer display-flex justify-space-between align-center">
+      <div class="container">
+        <div class="col">
+          <nav>
+            <aside id="label" class="footernav col-3">
+              <h4 class="label">Learn</h4>
+              <a href="https://www.w3schools.com/css/default.asp" target="_blank" class="a footer-a">CSS</a>
+              <br />
+              <a href="https://www.w3schools.com/html/" target="_blank" class="a footer-a">HTML</a>
+              <br />
+              <a href="https://www.w3schools.com/js/default.asp" target="_blank" class="a footer-a">Javascript</a>
+              <br />
+              <a href="https://react.dev/" target="_blank" class="a footer-a">React</a>
+            </aside>
+            <aside id="label" class="footernav col-3">
+              <h4 class="label">About Tek Tok</h4>
+              <a href="/aboutus" class="a footer-a">Back Story</a>
+              <br />
+              <a href="/comingsoon" class="a footer-a">Hiring</a>
+              <br />
+              <a href="/comingsoon" class="a footer-a">Engagement</a>
+            </aside>
+            <aside id="label" class="footernav col-3">
+              <h4 class="label">Partner With Us</h4>
+              <a href="/comingsoon" class="a footer-a">Partners</a>
+              <br />
+              <a href="/comingsoon" class="a footer-a">Branding Guidelines</a>
+              <br />
+              <a href="/comingsoon" class="a footer-a">Explore Internships</a>
+              <br />
+              <a href="/comingsoon" class="a footer-a">Testimonials</a>
+            </aside>
+            <aside id="label" class="col-3">
+              <img class="footerlogo" src="/assets/4.png" alt="logo" style="height: 200px; width:200px">
+            </aside>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+  {{!-- if user is logged in, logout.js will activate --}}
+  {{#if logged_in}}
+  <script type="text/javascript" src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
