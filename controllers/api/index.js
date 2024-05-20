@@ -1,3 +1,6 @@
+
+
+// This module defines the main router for handling different API routes.
 const router = require('express').Router();
 const relationsRoute = require('./relationsRoute');
 const userRoute = require('./userRoute');

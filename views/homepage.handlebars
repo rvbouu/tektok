@@ -1,3 +1,5 @@
+
+{{!-- container on the left column holding the joke content --}}
 <div id="viewport" class="justify-space-between row">
   <div id="jokeBox" class="col-3 p-5">
     <aside id="jokeBox" class="col-12">
@@ -15,6 +17,7 @@
     {{/if}}
   </div>
 
+{{!-- !-- This section represents the post area of the webpage. --}}
   <section class="post-area col-6">
     {{#if logged_in}}
     <form class="form query-form m-3 p-3 text-center shadow-sm">
@@ -40,6 +43,7 @@
     {{/each}}
   </section>
 
+{{!--  This secton suggested users and users being followed. --}}
   {{#if logged_in}}
   <aside id="pcards" class="suggested py-5 px-3 col-3">
     <h3 class="sugest">Suggested Users</h3>

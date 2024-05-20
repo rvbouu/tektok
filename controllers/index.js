@@ -1,3 +1,5 @@
+
+//commenting to add index.js back
 const router = require('express').Router();
 
 const apiRoutes = require('./api');
@@ -8,4 +10,4 @@ router.use('/api', apiRoutes);
 
 module.exports = router;
 
-//commenting to add index.js back
+
