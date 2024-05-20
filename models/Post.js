@@ -3,6 +3,9 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
+
+// Define the Post model using Sequelize. This model represents individual posts
+
 Post.init(
   {
     id: {
@@ -28,6 +31,8 @@ Post.init(
       },
     },
   },
+
+  // disabling timestamps, freezing the table name.
   {
     sequelize,
     timestamps: false,

@@ -1,3 +1,4 @@
+{{!-- This section represents the user profile page layout. --}}
 <div class="align-items-center row">
   <h1 class="mb-5 px-3 col-12 text-center text-wrap">Welcome to {{firstname}}'s page!</h1>
   <aside class="col-md-4 p-2 user-info">
@@ -20,6 +21,8 @@
       {{/each}}
     </div>
   </section>
+
+{{!-- This section displays the user's followers and users they are following. The content within the sections is scrollable vertically if it exceeds the available space --}}
   <div class="row text-center relations col-md-4 p-3">
     <section id="follower-sect" class="col-lg-5 mx-1">
       <h3 class="display-flex justify-center usertext">Followers</h3>
