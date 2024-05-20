@@ -1,7 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt'); //encrypts password
 const sequelize = require('../config/connection');
 
+//model for users of Tek Tok.  Includes their id, first and last name, email, username, password which is encrypted, and profile image and 'about me' aka readme. section
 class User extends Model {
   async checkPassword(loginPw) {
     return await bcrypt.compare(loginPw, this.password);
@@ -59,7 +60,7 @@ User.init(
     }
   },
   {
-    hooks: {
+    hooks: { //encrypts password
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
