@@ -4,7 +4,7 @@ const answer = document.querySelector(".answer")
 const question = document.querySelector(".question")
 
 
-
+//linking up the correct answers with the questions they belong to in the joke of the day
 button.addEventListener('click', function (event) {
    const answers = ["Because it ran out of cache!", "Because he didn't get arrays!", "Because light attracts bugs!", "None. It's a hardware problem!", "Because they don't see sharp!"]
    console.log("button")

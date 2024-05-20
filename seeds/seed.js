@@ -1,3 +1,5 @@
+
+//linking all data of users, following and followers and dummy data for first posts.
 const sequelize = require('../config/connection');
 const { User, Post, Relations } = require('../models');
 
@@ -27,4 +29,3 @@ const seedDatabase = async () => {
 
 seedDatabase();
 
-// NEED TO REVISE WITH TEKTOK STUFF

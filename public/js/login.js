@@ -28,13 +28,13 @@ const loginFormHandler = async (event) => {
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
-
+//collect values for sign up form
   const firstname = document.querySelector('#fname-signup').value;
   const lastname = document.querySelector('#lname-signup').value;
   const username = document.getElementById('username-signup').value;
   const email = document.querySelector('#email-signup').value;
   const password = document.querySelector('#password-signup').value;
-
+//requires all form fields to be filled out
   if (!firstname || !lastname || !username || !email || !password) {
     const errorMessage = document.createElement('p');
     errorMessage.textContent = 'Please fill out all required fields.';
@@ -42,6 +42,7 @@ const signupFormHandler = async (event) => {
     return;
 }
 
+//send post to API endpoint with all user info
 try {
     const response = await fetch('/api/users', {
         method: 'POST',
@@ -62,6 +63,7 @@ try {
 };
 document.getElementById('signup-form').addEventListener('submit', signupFormHandler);
 
+//login and signup event listeners
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);

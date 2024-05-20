@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { User, Relations, Post } = require('../../models');
 
-// const { pool } = require('../app'); // Import the pool from app.js
-// USING FOR TESTING IN POSTMAN vb - WILL DELETE LATER
+//displays who is following a user and who they are following
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -31,6 +30,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//displays who is following a user and who they are following by id
 router.get('/:id', async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
@@ -58,17 +58,6 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({ status: `error`, message: err });
   }
 });
-
-// Get all user
-// router.get('/signup', async (req, res) => {
-//   try {
-//     const userData = await User.findAll();
-//     res.status(200).json(userData);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).send('Error fetching users');
-//   }
-// });
 
 
 // Create a new user
@@ -133,6 +122,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+//deleting user by id
 router.delete('/:id', async (req, res) => {
   try {
     const userData = await User.destroy({
