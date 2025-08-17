@@ -13,7 +13,7 @@ if (process.env.DB_URL) {
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
-      host: '127.0.0.1',
+      host: 'dpg-d2h4f3v5r7bs73fn7pl0-a',
       dialect: 'postgres'
     }
   );
